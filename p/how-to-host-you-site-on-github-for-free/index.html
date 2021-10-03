@@ -56,7 +56,7 @@ Github
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-3 minute read
+6 minute read
 </time>
 </div>
 </footer>
@@ -72,15 +72,18 @@ Github
 <figcaption>2560px-Logo_of_Hugo_the_static_website_generator.svg.png</figcaption>
 </figure></p>
 <p>According to their <a class=link href=https://gohugo.io/about/what-is-hugo/ target=_blank rel=noopener>site</a> Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.</p>
-<p>Put it in layman terms <a class=link href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> is a tool that generates a full static HTML website based on raw data and a set of templates. Essentially, Hugo automates the task of coding individual HTML pages and gets those pages ready to serve to users ahead of time.</p>
+<p>Put it in layman terms <a class=link href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> is a tool that generates a full static HTML website based on raw data and a set of templates. Essentially, Hugo automates the task of coding individual HTML pages and gets those pages ready to serve to users ahead of time. The nice thing about Hugo is that even though is written in go, you don&rsquo;t need to have go installed on your machine.</p>
 <p>The raw data is the content you write in <a class=link href=https://www.markdownguide.org/ target=_blank rel=noopener>Markdown</a>, a format that widely used in lots of editors.</p>
 <p>The template is the theme that you chose for your site.</p>
 <p>My process for writing a blog post is:</p>
 <ul>
-<li>write a post using <a class=link href=https://www.notion.so/ target=_blank rel=noopener>Notion</a></li>
-<li>export the content to a markdown file</li>
-<li>then commit the file to a GitHub repository</li>
-<li>using GitHub Actions, deploy the changes to a repository created for GitHub Pages.</li>
+<li>write a post using <a class=link href=https://code.visualstudio.com/ target=_blank rel=noopener>VSCode</a>. I have install the <a class=link href="https://marketplace.visualstudio.com/items?itemName=zaaack.markdown-editor" target=_blank rel=noopener>Markdown Editor</a> to make it easier to arrange the post and preview it, but lately I started using it less and less.
+<ul>
+<li>When I&rsquo;m on the move and don&rsquo;t have access to my PC, I use VSCode from <a class=link href=https://www.gitpod.io/ target=_blank rel=noopener>GitPod</a>.</li>
+</ul>
+</li>
+<li>then commit the post to the GitHub repository</li>
+<li>using GitHub Actions, deploy the post to a separate repository created for GitHub Pages.</li>
 </ul>
 <h2 id=install-hugo>Install Hugo</h2>
 <p>The first think we need to do is to install the Hugo CLI, to be able to test locally our changes before pushing them to <a class=link href=https://github.com/ target=_blank rel=noopener>Github</a>. Depending on your operating system you need to do the following:</p>
@@ -112,9 +115,213 @@ sudo pacman -Syu hugo
 sudo dnf install hugo
 </code></pre></div><p>For other distributions or operating systems visit the <a class=link href=https://gohugo.io/getting-started/installing/ target=_blank rel=noopener>Hugo&rsquo;s install guide.</a></p>
 <h2 id=create-a-hugo-site>Create a Hugo site</h2>
-<p>Now that you have Hugo install is time to create your own site by running:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>hugo new site myblog
-</code></pre></div><p>Now that the site is created, comes the hardest part. Picking up a <a class=link href=https://themes.gohugo.io/ target=_blank rel=noopener>theme</a>. This is the steps were I&rsquo;ve spend the most time on and probably the part of my blog were i tinker the most.</p>
+<blockquote>
+<p>If you don&rsquo;t have any knowledge of git, before you continue take a look at the <a class=link href=https://guides.github.com/introduction/git-handbook/ target=_blank rel=noopener>Git Handbook</a> and the <a class=link href=https://guides.github.com/ target=_blank rel=noopener>GitHub Guides Page</a>
+If you want to have an in depth knowledge of Git read the <a class=link href=https://git-scm.com/book/en/v2 target=_blank rel=noopener>Git Book</a></p>
+</blockquote>
+<p>Now that you have Hugo install is time to create your own site and run it locally:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># create site</span>
+hugo new site myblog-name
+
+<span class=c1># move into newly created site</span>
+<span class=nb>cd</span> myblog-name
+
+<span class=c1># start the hugo server. The server will point to http://localhost:1313/</span>
+<span class=c1># the -D option will include content marked as draft. More info at https://gohugo.io/commands/hugo_server/</span>
+hugo server -D
+
+</code></pre></div><p>Now that the site is created, comes the hardest part. Picking up a <a class=link href=https://themes.gohugo.io/ target=_blank rel=noopener>theme</a>. This is the steps were I&rsquo;ve spend the most time on and probably the part of my blog where I tinker the most until now. At the time of the writting I&rsquo;m using <a class=link href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener>Hugo Theme Stack.</a> My recommendation is that if you are using Git to manage your Hugo site, add the themes as a submodule.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># git submodule add repo-url</span>
+git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
+
+</code></pre></div><p>If it&rsquo;s your first time using this theme, take a look at exampleSite folder, which includes an example config.yaml with all available parameters.</p>
+<blockquote>
+<p>If you plan to test out multiple themes, remember to backup your config file so you can easily come back to a previous version, or create a branch for each theme that you test out. This way when you find the one it&rsquo;s easy to switch to it and start working.</p>
+</blockquote>
+<p>My config file is:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>baseurl</span><span class=p>:</span><span class=w> </span><span class=l>https://drgos.com</span><span class=w>
+</span><span class=w></span><span class=nt>languageCode</span><span class=p>:</span><span class=w> </span><span class=l>en-us</span><span class=w>
+</span><span class=w></span><span class=nt>theme</span><span class=p>:</span><span class=w> </span><span class=l>hugo-theme-stack</span><span class=w>
+</span><span class=w></span><span class=nt>paginate</span><span class=p>:</span><span class=w> </span><span class=m>10</span><span class=w>
+</span><span class=w></span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=l>DrGos</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=c># Theme i18n support</span><span class=w>
+</span><span class=w></span><span class=c># Available values: en, fr, id, ja, ko, pt-br, zh-cn, es, de, nl, it</span><span class=w>
+</span><span class=w></span><span class=nt>DefaultContentLanguage</span><span class=p>:</span><span class=w> </span><span class=l>en</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>permalinks</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>post</span><span class=p>:</span><span class=w> </span><span class=l>/p/:slug/</span><span class=w>
+</span><span class=w>    </span><span class=nt>page</span><span class=p>:</span><span class=w> </span><span class=l>/:slug/</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>params</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>mainSections</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span>- <span class=l>post</span><span class=w>
+</span><span class=w>    </span><span class=nt>featuredImageField</span><span class=p>:</span><span class=w> </span><span class=l>image</span><span class=w>
+</span><span class=w>    </span><span class=nt>rssFullContent</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>    </span><span class=nt>favicon</span><span class=p>:</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=nt>footer</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>since</span><span class=p>:</span><span class=w> </span><span class=m>2021</span><span class=w>
+</span><span class=w>        </span><span class=nt>customText</span><span class=p>:</span><span class=w> </span><span class=l>If you want to collaborate, just reach out!</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=nt>dateFormat</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>published</span><span class=p>:</span><span class=w> </span><span class=l>Jan 02, 2006</span><span class=w>
+</span><span class=w>        </span><span class=nt>lastUpdated</span><span class=p>:</span><span class=w> </span><span class=l>Jan 02, 2006 15:04 MST</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=nt>sidebar</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>emoji</span><span class=p>:</span><span class=w> </span><span class=l>☕</span><span class=w>
+</span><span class=w>        </span><span class=nt>subtitle</span><span class=p>:</span><span class=w> </span><span class=l>Hi, my name is Dragos and I&#39;m a full stack engineer.</span><span class=w>
+</span><span class=w>        </span><span class=nt>avatar</span><span class=p>:</span><span class=w>
+</span><span class=w>            </span><span class=nt>enabled</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>            </span><span class=nt>local</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>            </span><span class=nt>src</span><span class=p>:</span><span class=w> </span><span class=l>https://drgos.com/images/profile.png</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=nt>article</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>math</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>        </span><span class=nt>toc</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>        </span><span class=nt>readingTime</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>        </span><span class=nt>license</span><span class=p>:</span><span class=w>
+</span><span class=w>            </span><span class=nt>enabled</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>            </span><span class=nt>default</span><span class=p>:</span><span class=w> </span><span class=l>Licensed under CC BY-NC-SA 4.0</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=nt>comments</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>enabled</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>        </span><span class=nt>provider</span><span class=p>:</span><span class=w> </span><span class=l>utterances</span><span class=w> </span><span class=c># disqus</span><span class=w>
+</span><span class=w>
+</span><span class=w>        </span><span class=nt>utterances</span><span class=p>:</span><span class=w>
+</span><span class=w>            </span><span class=nt>repo</span><span class=p>:</span><span class=w> </span><span class=c># blog public repo</span><span class=w>
+</span><span class=w>            </span><span class=nt>issueTerm</span><span class=p>:</span><span class=w> </span><span class=l>pathname</span><span class=w>
+</span><span class=w>            </span><span class=nt>label</span><span class=p>:</span><span class=w> </span><span class=l>Comment</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=nt>widgets</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>enabled</span><span class=p>:</span><span class=w>
+</span><span class=w>            </span>- <span class=l>search</span><span class=w>
+</span><span class=w>            </span>- <span class=l>archives</span><span class=w>
+</span><span class=w>            </span>- <span class=l>tag-cloud</span><span class=w>
+</span><span class=w>
+</span><span class=w>        </span><span class=nt>archives</span><span class=p>:</span><span class=w>
+</span><span class=w>            </span><span class=nt>limit</span><span class=p>:</span><span class=w> </span><span class=m>5</span><span class=w>
+</span><span class=w>
+</span><span class=w>        </span><span class=nt>tagCloud</span><span class=p>:</span><span class=w>
+</span><span class=w>            </span><span class=nt>limit</span><span class=p>:</span><span class=w> </span><span class=m>5</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=nt>colorScheme</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=c># Display toggle</span><span class=w>
+</span><span class=w>        </span><span class=nt>toggle</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>
+</span><span class=w>        </span><span class=c># Available values: auto, light, dark</span><span class=w>
+</span><span class=w>        </span><span class=nt>default</span><span class=p>:</span><span class=w> </span><span class=l>auto</span><span class=w>
+</span><span class=w>
+</span><span class=w>    </span><span class=nt>imageProcessing</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>cover</span><span class=p>:</span><span class=w>
+</span><span class=w>            </span><span class=nt>enabled</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>        </span><span class=nt>content</span><span class=p>:</span><span class=w>
+</span><span class=w>            </span><span class=nt>enabled</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=c>### Custom menu</span><span class=w>
+</span><span class=w></span><span class=c>### See https://docs.stack.jimmycai.com/configuration/custom-menu.html</span><span class=w>
+</span><span class=w></span><span class=c>### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter</span><span class=w>
+</span><span class=w></span><span class=nt>menu</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>main</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span>- <span class=nt>identifier</span><span class=p>:</span><span class=w> </span><span class=l>home</span><span class=w>
+</span><span class=w>          </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Home</span><span class=w>
+</span><span class=w>          </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=l>/</span><span class=w>
+</span><span class=w>          </span><span class=nt>weight</span><span class=p>:</span><span class=w> </span>-<span class=m>100</span><span class=w>
+</span><span class=w>          </span><span class=nt>pre</span><span class=p>:</span><span class=w> </span><span class=l>home</span><span class=w>
+</span><span class=w>          </span><span class=nt>params</span><span class=p>:</span><span class=w>
+</span><span class=w>              </span><span class=c>### For demonstration purpose, the home link will be open in a new tab</span><span class=w>
+</span><span class=w>              </span><span class=nt>newTab</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>related</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>includeNewer</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>    </span><span class=nt>threshold</span><span class=p>:</span><span class=w> </span><span class=m>60</span><span class=w>
+</span><span class=w>    </span><span class=nt>toLower</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>    </span><span class=nt>indices</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>tags</span><span class=w>
+</span><span class=w>          </span><span class=nt>weight</span><span class=p>:</span><span class=w> </span><span class=m>100</span><span class=w>
+</span><span class=w>
+</span><span class=w>        </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>categories</span><span class=w>
+</span><span class=w>          </span><span class=nt>weight</span><span class=p>:</span><span class=w> </span><span class=m>200</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>markup</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>goldmark</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>renderer</span><span class=p>:</span><span class=w>
+</span><span class=w>            </span><span class=c>## Set to true if you have HTML content inside Markdown</span><span class=w>
+</span><span class=w>            </span><span class=nt>unsafe</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>    </span><span class=nt>tableOfContents</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>endLevel</span><span class=p>:</span><span class=w> </span><span class=m>4</span><span class=w>
+</span><span class=w>        </span><span class=nt>ordered</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>        </span><span class=nt>startLevel</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
+</span><span class=w>    </span><span class=nt>highlight</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=nt>noClasses</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>
+</span></code></pre></div><p>Now that you have your site set up, you can visit <a class=link href=https://localhost:1313 target=_blank rel=noopener>https://localhost:1313</a> to see how it looks</p>
+<h3 id=creating-a-new-post>Creating a new post</h3>
+<p>Create a new post to give your Hugo site some initial content. Run the hugo new command in your terminal to generate a new post:</p>
+<pre tabindex=0><code>  hugo new posts/hello-world.md
+</code></pre><p>Inside of hello-world.md, add some initial content. Remove the draft line in your post&rsquo;s frontmatter when you are happy with it and want your post to be published. Any posts with draft: true set will be skipped by Hugo&rsquo;s build process. If you test locally remember the <code>-D</code> option so that you draft is build.</p>
+<h2 id=deploy-to-github-pages>Deploy to GitHub Pages</h2>
+<p>We will commit our posts to a private repository and we will publish them using GitHub Actions.</p>
+<p>The first thing that we need to do is to create 2 GitHub repositories (one public one and one private one) by visiting <a class=link href=https://repo.new/ target=_blank rel=noopener>repo.new</a>.</p>
+<p>The private one you can name it whatever you want, but the public one needs to be named <code>&lt;USERNAME>.github.io.</code> The repositories can be empty, you don&rsquo;t need <code>README.md</code> <code>.gitignore</code> or any other file.</p>
+<p>Once you have the repositories ready, we need to point the Hugo site to the private repo.</p>
+<p>Run the following commands in your site folder:</p>
+<pre tabindex=0><code>git init
+git add .
+git remote add origin replace_with_url_of_private_repo
+git commit -m “first commit”
+git push origin master
+</code></pre><p>After successfully committed, visit your private repository, you should see everything that was in your site folder. If everything looks as expected, it time to set up GitHub Actions to publish you site to the public repository.</p>
+<h3 id=setup-github-actions-to-publish-changes>Setup GitHub Actions to publish changes</h3>
+<p>Once we have the repositories ready, it&rsquo;s time to setup the GitHub Actions.
+This can easily be done by adding a <code>deploy.yaml</code> in <code>your_site/.github/workflows</code></p>
+<pre tabindex=0><code>mkdir -p .github/workflows # -p will create any parent directories if needed.
+touch deploy.yaml 
+</code></pre><p>Open the deploy.yaml file in your favorite editor and paste:</p>
+<pre tabindex=0><code>name: hugo publish
+
+on:
+  push:
+    branches:
+    - master # deploy the site when there is a push to master branch.
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: git checkout 
+      uses: actions/checkout@v2
+      #with:
+      #    submodules: true  # Fetch Hugo themes (true OR recursive)
+      #    fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+    
+    - name: update themes
+      run: git submodule update --init --recursive
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+        extended: true
+
+    - name: Build
+      run: hugo --minify
+    
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.GH_TOKEN }}
+        external_repository: drgsn/drgsn.github.io #public repository
+        publish_dir: ./public
+        user_name: # your github user_name
+        user_email: # your github email
+        publish_branch: master  # default: gh-pages
+        
+</code></pre><p>Now you need to commit and push your newly created action:</p>
+<pre tabindex=0><code>git add .
+git commit -m &quot;added github action&quot;
+git push
+</code></pre><p>After the action finishes running, you should see your site in your public repo. If you visit <code>&lt;username>.github.io</code> then your site should load.</p>
 </section>
 <footer class=article-footer>
 <section class=article-tags>
@@ -197,7 +404,16 @@ Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=
 <li><a href=#linux>Linux</a></li>
 </ol>
 </li>
-<li><a href=#create-a-hugo-site>Create a Hugo site</a></li>
+<li><a href=#create-a-hugo-site>Create a Hugo site</a>
+<ol>
+<li><a href=#creating-a-new-post>Creating a new post</a></li>
+</ol>
+</li>
+<li><a href=#deploy-to-github-pages>Deploy to GitHub Pages</a>
+<ol>
+<li><a href=#setup-github-actions-to-publish-changes>Setup GitHub Actions to publish changes</a></li>
+</ol>
+</li>
 </ol>
 </nav>
 </div>
