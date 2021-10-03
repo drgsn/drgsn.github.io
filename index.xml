@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DrGos</title><link>https://drgos.com/</link><description>Recent content on DrGos</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://drgos.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://drgos.com/p/hello-world/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://drgos.com/p/hello-world/</guid><description>&lt;h1 id="how-to-create-blog-for-free-with-hugo-and-github">How to create blog for free with Hugo and Github&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DrGos</title><link>https://drgos.com/</link><description>Recent content on DrGos</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://drgos.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://drgos.com/p/hugo/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://drgos.com/p/hugo/</guid><description>&lt;img src="https://unsplash.com/photos/mfB1B1s4sMc" alt="Featured image of post Hello World" />&lt;h1 id="how-to-create-blog-for-free-with-hugo-and-github">How to create blog for free with Hugo and GitHub&lt;/h1>
 &lt;p>I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.&lt;/p>
 &lt;h1 id="what-is-hugo">What is Hugo?&lt;/h1>
 &lt;p>&lt;figure
 >
-&lt;a href="https://www.drgos.com/images/2560px-Logo_of_Hugo_the_static_website_generator.png" >
-&lt;img src="https://www.drgos.com/images/2560px-Logo_of_Hugo_the_static_website_generator.png"
+&lt;a href="https://drgos.com/images/2560px-Logo_of_Hugo_the_static_website_generator.png" >
+&lt;img src="https://drgos.com/images/2560px-Logo_of_Hugo_the_static_website_generator.png"
 loading="lazy"
-alt="2560px-Logo_of_Hugo_the_static_website_generator.png">
+alt="2560px-Logo_of_Hugo_the_static_website_generator.svg.png">
 &lt;/a>
-&lt;figcaption>2560px-Logo_of_Hugo_the_static_website_generator.png&lt;/figcaption>
+&lt;figcaption>2560px-Logo_of_Hugo_the_static_website_generator.svg.png&lt;/figcaption>
 &lt;/figure>&lt;/p>
 &lt;p>According to their &lt;a class="link" href="https://gohugo.io/about/what-is-hugo/" target="_blank" rel="noopener"
 >site&lt;/a> Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.&lt;/p>
@@ -20,9 +20,10 @@ alt="2560px-Logo_of_Hugo_the_static_website_generator.png">
 &lt;p>My process for writing a blog post is:&lt;/p>
 &lt;ul>
 &lt;li>write a post using &lt;a class="link" href="https://www.notion.so/" target="_blank" rel="noopener"
->Notion&lt;/a>,&lt;/li>
-&lt;li>then commit your changes to a Git repository, most commonly on GitHub,&lt;/li>
-&lt;li>and then some glue technology deploys the changes on the server that hosts the site.&lt;/li>
+>Notion&lt;/a>&lt;/li>
+&lt;li>export the content to a markdown file&lt;/li>
+&lt;li>then commit the file to a GitHub repository&lt;/li>
+&lt;li>using GitHub Actions, deploy the changes to a repository created for GitHub Pages.&lt;/li>
 &lt;/ul>
 &lt;h1 id="install-hugo">Install Hugo&lt;/h1>
 &lt;p>The first think we need to do is to install the Hugo CLI, to be able to test locally our changes before pushing them to &lt;a class="link" href="https://github.com/" target="_blank" rel="noopener"
@@ -62,7 +63,7 @@ sudo dnf install hugo
 &lt;p>Now that you have Hugo install is time to create your own site by running:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">hugo new site myblog
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Now that the site is created, comes the hardest part. Picking up a &lt;a class="link" href="https://themes.gohugo.io/" target="_blank" rel="noopener"
->theme&lt;/a>. This is the steps were I&amp;rsquo;ve spend the most time on and&lt;/p></description></item><item><title>Rich Content</title><link>https://drgos.com/p/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>https://drgos.com/p/rich-content/</guid><description>&lt;p>Hugo ships with several &lt;a class="link" href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes" target="_blank" rel="noopener"
+>theme&lt;/a>. This is the steps were I&amp;rsquo;ve spend the most time on and probably the part of my blog were i tinker the most.&lt;/p></description></item><item><title>Rich Content</title><link>https://drgos.com/p/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>https://drgos.com/p/rich-content/</guid><description>&lt;p>Hugo ships with several &lt;a class="link" href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes" target="_blank" rel="noopener"
 >Built-in Shortcodes&lt;/a> for rich content, along with a &lt;a class="link" href="https://gohugo.io/about/hugo-and-gdpr/" target="_blank" rel="noopener"
 >Privacy Config&lt;/a> and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p>
 &lt;hr>
