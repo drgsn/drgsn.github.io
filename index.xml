@@ -1,4 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DrGos</title><link>https://drgos.com/</link><description>Recent content on DrGos</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://drgos.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Rich Content</title><link>https://drgos.com/p/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>https://drgos.com/p/rich-content/</guid><description>&lt;p>Hugo ships with several &lt;a class="link" href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DrGos</title><link>https://drgos.com/</link><description>Recent content on DrGos</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://drgos.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://drgos.com/p/hello-world/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://drgos.com/p/hello-world/</guid><description>&lt;h1 id="how-to-create-blog-for-free-with-hugo-and-github">How to create blog for free with Hugo and Github&lt;/h1>
+&lt;p>I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.&lt;/p>
+&lt;h1 id="what-is-hugo">What is Hugo?&lt;/h1>
+&lt;p>&lt;figure
+>
+&lt;a href="https://www.drgos.com/images/2560px-Logo_of_Hugo_the_static_website_generator.png" >
+&lt;img src="https://www.drgos.com/images/2560px-Logo_of_Hugo_the_static_website_generator.png"
+loading="lazy"
+alt="2560px-Logo_of_Hugo_the_static_website_generator.png">
+&lt;/a>
+&lt;figcaption>2560px-Logo_of_Hugo_the_static_website_generator.png&lt;/figcaption>
+&lt;/figure>&lt;/p>
+&lt;p>According to their &lt;a class="link" href="https://gohugo.io/about/what-is-hugo/" target="_blank" rel="noopener"
+>site&lt;/a> Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.&lt;/p>
+&lt;p>Put it in layman terms &lt;a class="link" href="https://gohugo.io/" target="_blank" rel="noopener"
+>Hugo&lt;/a> is a tool that generates a full static HTML website based on raw data and a set of templates. Essentially, Hugo automates the task of coding individual HTML pages and gets those pages ready to serve to users ahead of time.&lt;/p>
+&lt;p>The raw data is the content you write in &lt;a class="link" href="https://www.markdownguide.org/" target="_blank" rel="noopener"
+>Markdown&lt;/a>, a format that widely used in lots of editors.&lt;/p>
+&lt;p>The template is the theme that you chose for your site.&lt;/p>
+&lt;p>My process for writing a blog post is:&lt;/p>
+&lt;ul>
+&lt;li>write a post using &lt;a class="link" href="https://www.notion.so/" target="_blank" rel="noopener"
+>Notion&lt;/a>,&lt;/li>
+&lt;li>then commit your changes to a Git repository, most commonly on GitHub,&lt;/li>
+&lt;li>and then some glue technology deploys the changes on the server that hosts the site.&lt;/li>
+&lt;/ul>
+&lt;h1 id="install-hugo">Install Hugo&lt;/h1>
+&lt;p>The first think we need to do is to install the Hugo CLI, to be able to test locally our changes before pushing them to &lt;a class="link" href="https://github.com/" target="_blank" rel="noopener"
+>Github&lt;/a>. Depending on your operating system you need to do the following:&lt;/p>
+&lt;h2 id="mac-os">Mac OS:&lt;/h2>
+&lt;p>If you use &lt;a class="link" href="https://brew.sh/" target="_blank" rel="noopener"
+>Homebrew&lt;/a>, run the brew install command in your terminal to install Hugo:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">brew install hugo
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>or if you use &lt;a class="link" href="https://www.macports.org/" target="_blank" rel="noopener"
+>MacPorts&lt;/a> run the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">port install hugo
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To validate the installation run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">hugo version
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="windows">Windows:&lt;/h2>
+&lt;p>There are 2 methods of installing Hugo on windows:&lt;/p>
+&lt;h3 id="method-1---using-chocolateyhttpschocolateyorg">Method 1 - Using &lt;a class="link" href="https://chocolatey.org/" target="_blank" rel="noopener"
+>Chocolatey&lt;/a>:&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">choco install hugo --confirm
+&lt;span class="c1"># Or if you need the “extended” Sass/SCSS version:&lt;/span>
+choco install hugo-extended -confirm
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="method-2---manual-installation">Method 2 - Manual Installation&lt;/h3>
+&lt;p>The Hugo GitHub repository contains pre-built versions of the Hugo command-line tool for various operating systems, which can be found on &lt;a class="link" href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener"
+>the Releases page&lt;/a>.&lt;/p>
+&lt;p>For more instruction on installing these releases, refer to &lt;a class="link" href="https://gohugo.io/getting-started/installing/" target="_blank" rel="noopener"
+>Hugo&amp;rsquo;s install guide.&lt;/a>&lt;/p>
+&lt;h2 id="linux">Linux&lt;/h2>
+&lt;p>Based on your operating system you can use one of the following commands:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># Debian / Ubuntu&lt;/span>
+sudo apt-get install hugo
+&lt;span class="c1"># Arch / Manjaro&lt;/span>
+sudo pacman -Syu hugo
+&lt;span class="c1"># Fedora, Red Hat and CentOS&lt;/span>
+sudo dnf install hugo
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For other distributions or operating systems visit the &lt;a class="link" href="https://gohugo.io/getting-started/installing/" target="_blank" rel="noopener"
+>Hugo&amp;rsquo;s install guide.&lt;/a>&lt;/p>
+&lt;h1 id="create-a-hugo-site">Create a Hugo site&lt;/h1>
+&lt;p>Now that you have Hugo install is time to create your own site by running:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">hugo new site myblog
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now that the site is created, comes the hardest part. Picking up a &lt;a class="link" href="https://themes.gohugo.io/" target="_blank" rel="noopener"
+>theme&lt;/a>. This is the steps were I&amp;rsquo;ve spend the most time on and&lt;/p></description></item><item><title>Rich Content</title><link>https://drgos.com/p/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>https://drgos.com/p/rich-content/</guid><description>&lt;p>Hugo ships with several &lt;a class="link" href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes" target="_blank" rel="noopener"
 >Built-in Shortcodes&lt;/a> for rich content, along with a &lt;a class="link" href="https://gohugo.io/about/hugo-and-gdpr/" target="_blank" rel="noopener"
 >Privacy Config&lt;/a> and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p>
 &lt;hr>
