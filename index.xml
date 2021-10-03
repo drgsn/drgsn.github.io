@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DrGos</title><link>https://drgos.com/</link><description>Recent content on DrGos</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://drgos.com/index.xml" rel="self" type="application/rss+xml"/><item><title>How to host you site on Github for free!</title><link>https://drgos.com/p/how-to-host-you-site-on-github-for-free/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://drgos.com/p/how-to-host-you-site-on-github-for-free/</guid><description>&lt;img src="https://drgos.com/p/how-to-host-you-site-on-github-for-free/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post How to host you site on Github for free!" />&lt;h1 id="how-to-create-blog-for-free-with-hugo-and-github">How to create blog for free with Hugo and GitHub&lt;/h1>
-&lt;p>I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.&lt;/p>
-&lt;h1 id="what-is-hugo">What is Hugo?&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DrGos</title><link>https://drgos.com/</link><description>Recent content on DrGos</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://drgos.com/index.xml" rel="self" type="application/rss+xml"/><item><title>How to host you site on Github for free!</title><link>https://drgos.com/p/how-to-host-you-site-on-github-for-free/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://drgos.com/p/how-to-host-you-site-on-github-for-free/</guid><description>&lt;img src="https://drgos.com/p/how-to-host-you-site-on-github-for-free/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post How to host you site on Github for free!" />&lt;p>I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.&lt;/p>
+&lt;h2 id="what-is-hugo">What is Hugo?&lt;/h2>
 &lt;p>&lt;figure
 >
 &lt;a href="https://drgos.com/images/2560px-Logo_of_Hugo_the_static_website_generator.png" >
@@ -25,10 +24,10 @@ alt="2560px-Logo_of_Hugo_the_static_website_generator.svg.png">
 &lt;li>then commit the file to a GitHub repository&lt;/li>
 &lt;li>using GitHub Actions, deploy the changes to a repository created for GitHub Pages.&lt;/li>
 &lt;/ul>
-&lt;h1 id="install-hugo">Install Hugo&lt;/h1>
+&lt;h2 id="install-hugo">Install Hugo&lt;/h2>
 &lt;p>The first think we need to do is to install the Hugo CLI, to be able to test locally our changes before pushing them to &lt;a class="link" href="https://github.com/" target="_blank" rel="noopener"
 >Github&lt;/a>. Depending on your operating system you need to do the following:&lt;/p>
-&lt;h2 id="mac-os">Mac OS:&lt;/h2>
+&lt;h3 id="mac-os">Mac OS:&lt;/h3>
 &lt;p>If you use &lt;a class="link" href="https://brew.sh/" target="_blank" rel="noopener"
 >Homebrew&lt;/a>, run the brew install command in your terminal to install Hugo:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">brew install hugo
@@ -37,7 +36,7 @@ alt="2560px-Logo_of_Hugo_the_static_website_generator.svg.png">
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">port install hugo
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>To validate the installation run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">hugo version
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="windows">Windows:&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="windows">Windows:&lt;/h3>
 &lt;p>There are 2 methods of installing Hugo on windows:&lt;/p>
 &lt;h3 id="method-1---using-chocolateyhttpschocolateyorg">Method 1 - Using &lt;a class="link" href="https://chocolatey.org/" target="_blank" rel="noopener"
 >Chocolatey&lt;/a>:&lt;/h3>
@@ -49,7 +48,7 @@ choco install hugo-extended -confirm
 >the Releases page&lt;/a>.&lt;/p>
 &lt;p>For more instruction on installing these releases, refer to &lt;a class="link" href="https://gohugo.io/getting-started/installing/" target="_blank" rel="noopener"
 >Hugo&amp;rsquo;s install guide.&lt;/a>&lt;/p>
-&lt;h2 id="linux">Linux&lt;/h2>
+&lt;h3 id="linux">Linux&lt;/h3>
 &lt;p>Based on your operating system you can use one of the following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="c1"># Debian / Ubuntu&lt;/span>
 sudo apt-get install hugo
@@ -59,7 +58,7 @@ sudo pacman -Syu hugo
 sudo dnf install hugo
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>For other distributions or operating systems visit the &lt;a class="link" href="https://gohugo.io/getting-started/installing/" target="_blank" rel="noopener"
 >Hugo&amp;rsquo;s install guide.&lt;/a>&lt;/p>
-&lt;h1 id="create-a-hugo-site">Create a Hugo site&lt;/h1>
+&lt;h2 id="create-a-hugo-site">Create a Hugo site&lt;/h2>
 &lt;p>Now that you have Hugo install is time to create your own site by running:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">hugo new site myblog
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Now that the site is created, comes the hardest part. Picking up a &lt;a class="link" href="https://themes.gohugo.io/" target="_blank" rel="noopener"

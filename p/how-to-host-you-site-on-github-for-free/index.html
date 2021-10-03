@@ -1,12 +1,12 @@
 <!doctype html><html lang=en-us>
 <head><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="How to create blog for free with Hugo and GitHub I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.
 What is Hugo?  2560px-Logo_of_Hugo_the_static_website_generator.svg.png 
 According to their site Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
 Put it in layman terms Hugo is a tool that generates a full static HTML website based on raw data and a set of templates."><title>How to host you site on Github for free!</title>
 <link rel=canonical href=https://drgos.com/p/how-to-host-you-site-on-github-for-free/>
 <link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="How to host you site on Github for free!">
-<meta property="og:description" content="How to create blog for free with Hugo and GitHub I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.
+<meta property="og:description" content="I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.
 What is Hugo?  2560px-Logo_of_Hugo_the_static_website_generator.svg.png 
 According to their site Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
 Put it in layman terms Hugo is a tool that generates a full static HTML website based on raw data and a set of templates.">
@@ -15,7 +15,7 @@ Put it in layman terms Hugo is a tool that generates a full static HTML website 
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="hugo"><meta property="article:tag" content="github"><meta property="article:published_time" content="2020-10-01T00:00:00+00:00"><meta property="article:modified_time" content="2020-10-01T00:00:00+00:00"><meta property="og:image" content="https://drgos.com/p/how-to-host-you-site-on-github-for-free/the-creative-exchange-d2zvqp3fpro-unsplash.jpg">
 <meta name=twitter:site content="@DragosNM">
 <meta name=twitter:creator content="@DragosNM"><meta name=twitter:title content="How to host you site on Github for free!">
-<meta name=twitter:description content="How to create blog for free with Hugo and GitHub I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.
+<meta name=twitter:description content="I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.
 What is Hugo?  2560px-Logo_of_Hugo_the_static_website_generator.svg.png 
 According to their site Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
 Put it in layman terms Hugo is a tool that generates a full static HTML website based on raw data and a set of templates."><meta name=twitter:card content="summary_large_image">
@@ -63,9 +63,8 @@ Github
 </div>
 </header>
 <section class=article-content>
-<h1 id=how-to-create-blog-for-free-with-hugo-and-github>How to create blog for free with Hugo and GitHub</h1>
 <p>I&rsquo;ve decided to start a blog and what better hello world post than how I&rsquo;ve set it up. But first lets talk about what is Hugo.</p>
-<h1 id=what-is-hugo>What is Hugo?</h1>
+<h2 id=what-is-hugo>What is Hugo?</h2>
 <p><figure>
 <a href=/images/2560px-Logo_of_Hugo_the_static_website_generator.png>
 <img src=/images/2560px-Logo_of_Hugo_the_static_website_generator.png loading=lazy alt=2560px-Logo_of_Hugo_the_static_website_generator.svg.png>
@@ -83,16 +82,16 @@ Github
 <li>then commit the file to a GitHub repository</li>
 <li>using GitHub Actions, deploy the changes to a repository created for GitHub Pages.</li>
 </ul>
-<h1 id=install-hugo>Install Hugo</h1>
+<h2 id=install-hugo>Install Hugo</h2>
 <p>The first think we need to do is to install the Hugo CLI, to be able to test locally our changes before pushing them to <a class=link href=https://github.com/ target=_blank rel=noopener>Github</a>. Depending on your operating system you need to do the following:</p>
-<h2 id=mac-os>Mac OS:</h2>
+<h3 id=mac-os>Mac OS:</h3>
 <p>If you use <a class=link href=https://brew.sh/ target=_blank rel=noopener>Homebrew</a>, run the brew install command in your terminal to install Hugo:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>brew install hugo
 </code></pre></div><p>or if you use <a class=link href=https://www.macports.org/ target=_blank rel=noopener>MacPorts</a> run the following command:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>port install hugo
 </code></pre></div><p>To validate the installation run:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>hugo version
-</code></pre></div><h2 id=windows>Windows:</h2>
+</code></pre></div><h3 id=windows>Windows:</h3>
 <p>There are 2 methods of installing Hugo on windows:</p>
 <h3 id=method-1---using-chocolateyhttpschocolateyorg>Method 1 - Using <a class=link href=https://chocolatey.org/ target=_blank rel=noopener>Chocolatey</a>:</h3>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>choco install hugo --confirm
@@ -101,7 +100,7 @@ choco install hugo-extended -confirm
 </code></pre></div><h3 id=method-2---manual-installation>Method 2 - Manual Installation</h3>
 <p>The Hugo GitHub repository contains pre-built versions of the Hugo command-line tool for various operating systems, which can be found on <a class=link href=https://github.com/gohugoio/hugo/releases target=_blank rel=noopener>the Releases page</a>.</p>
 <p>For more instruction on installing these releases, refer to <a class=link href=https://gohugo.io/getting-started/installing/ target=_blank rel=noopener>Hugo&rsquo;s install guide.</a></p>
-<h2 id=linux>Linux</h2>
+<h3 id=linux>Linux</h3>
 <p>Based on your operating system you can use one of the following commands:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># Debian / Ubuntu</span>
 sudo apt-get install hugo
@@ -112,7 +111,7 @@ sudo pacman -Syu hugo
 <span class=c1># Fedora, Red Hat and CentOS</span>
 sudo dnf install hugo
 </code></pre></div><p>For other distributions or operating systems visit the <a class=link href=https://gohugo.io/getting-started/installing/ target=_blank rel=noopener>Hugo&rsquo;s install guide.</a></p>
-<h1 id=create-a-hugo-site>Create a Hugo site</h1>
+<h2 id=create-a-hugo-site>Create a Hugo site</h2>
 <p>Now that you have Hugo install is time to create your own site by running:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>hugo new site myblog
 </code></pre></div><p>Now that the site is created, comes the hardest part. Picking up a <a class=link href=https://themes.gohugo.io/ target=_blank rel=noopener>theme</a>. This is the steps were I&rsquo;ve spend the most time on and probably the part of my blog were i tinker the most.</p>
@@ -188,14 +187,17 @@ Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=
 <div class=widget--toc>
 <nav id=TableOfContents>
 <ol>
-<li><a href=#mac-os>Mac OS:</a></li>
-<li><a href=#windows>Windows:</a>
+<li><a href=#what-is-hugo>What is Hugo?</a></li>
+<li><a href=#install-hugo>Install Hugo</a>
 <ol>
+<li><a href=#mac-os>Mac OS:</a></li>
+<li><a href=#windows>Windows:</a></li>
 <li><a href=#method-1---using-chocolateyhttpschocolateyorg>Method 1 - Using <a href=https://chocolatey.org/>Chocolatey</a>:</a></li>
 <li><a href=#method-2---manual-installation>Method 2 - Manual Installation</a></li>
+<li><a href=#linux>Linux</a></li>
 </ol>
 </li>
-<li><a href=#linux>Linux</a></li>
+<li><a href=#create-a-hugo-site>Create a Hugo site</a></li>
 </ol>
 </nav>
 </div>
