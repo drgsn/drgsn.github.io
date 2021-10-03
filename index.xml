@@ -209,8 +209,8 @@ git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-them
 >https://localhost:1313&lt;/a> to see how it looks&lt;/p>
 &lt;h3 id="creating-a-new-post">Creating a new post&lt;/h3>
 &lt;p>Create a new post to give your Hugo site some initial content. Run the hugo new command in your terminal to generate a new post:&lt;/p>
-&lt;pre tabindex="0">&lt;code> hugo new posts/hello-world.md
-&lt;/code>&lt;/pre>&lt;p>Inside of hello-world.md, add some initial content. Remove the draft line in your post&amp;rsquo;s frontmatter when you are happy with it and want your post to be published. Any posts with draft: true set will be skipped by Hugo&amp;rsquo;s build process. If you test locally remember the &lt;code>-D&lt;/code> option so that you draft is build.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash"> hugo new posts/hello-world.md
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Inside of hello-world.md, add some initial content. Remove the draft line in your post&amp;rsquo;s frontmatter when you are happy with it and want your post to be published. Any posts with draft: true set will be skipped by Hugo&amp;rsquo;s build process. If you test locally remember the &lt;code>-D&lt;/code> option so that you draft is build.&lt;/p>
 &lt;h2 id="deploy-to-github-pages">Deploy to GitHub Pages&lt;/h2>
 &lt;p>We will commit our posts to a private repository and we will publish them using GitHub Actions.&lt;/p>
 &lt;p>The first thing that we need to do is to create 2 GitHub repositories (one public one and one private one) by visiting &lt;a class="link" href="https://repo.new/" target="_blank" rel="noopener"
@@ -218,52 +218,59 @@ git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-them
 &lt;p>The private one you can name it whatever you want, but the public one needs to be named &lt;code>&amp;lt;USERNAME&amp;gt;.github.io.&lt;/code> The repositories can be empty, you don&amp;rsquo;t need &lt;code>README.md&lt;/code> &lt;code>.gitignore&lt;/code> or any other file.&lt;/p>
 &lt;p>Once you have the repositories ready, we need to point the Hugo site to the private repo.&lt;/p>
 &lt;p>Run the following commands in your site folder:&lt;/p>
-&lt;pre tabindex="0">&lt;code>git init
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">git init
 git add .
 git remote add origin replace_with_url_of_private_repo
 git commit -m “first commit”
 git push origin master
-&lt;/code>&lt;/pre>&lt;p>After successfully committed, visit your private repository, you should see everything that was in your site folder. If everything looks as expected, it time to set up GitHub Actions to publish you site to the public repository.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>After successfully committed, visit your private repository, you should see everything that was in your site folder. If everything looks as expected, it time to set up GitHub Actions to publish you site to the public repository.&lt;/p>
 &lt;h3 id="setup-github-actions-to-publish-changes">Setup GitHub Actions to publish changes&lt;/h3>
 &lt;p>Once we have the repositories ready, it&amp;rsquo;s time to setup the GitHub Actions.
 This can easily be done by adding a &lt;code>deploy.yaml&lt;/code> in &lt;code>your_site/.github/workflows&lt;/code>&lt;/p>
-&lt;pre tabindex="0">&lt;code>mkdir -p .github/workflows # -p will create any parent directories if needed.
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">mkdir -p .github/workflows &lt;span class="c1"># -p will create any parent directories if needed.&lt;/span>
 touch deploy.yaml
-&lt;/code>&lt;/pre>&lt;p>Open the deploy.yaml file in your favorite editor and paste:&lt;/p>
-&lt;pre tabindex="0">&lt;code>name: hugo publish
-on:
-push:
-branches:
-- master # deploy the site when there is a push to master branch.
-jobs:
-build-deploy:
-runs-on: ubuntu-20.04
-steps:
-- name: git checkout
-uses: actions/checkout@v2
-#with:
-# submodules: true # Fetch Hugo themes (true OR recursive)
-# fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
-- name: update themes
-run: git submodule update --init --recursive
-- name: Setup Hugo
-uses: peaceiris/actions-hugo@v2
-with:
-hugo-version: 'latest'
-extended: true
-- name: Build
-run: hugo --minify
-- name: Deploy
-uses: peaceiris/actions-gh-pages@v3
-with:
-personal_token: ${{ secrets.GH_TOKEN }}
-external_repository: drgsn/drgsn.github.io #public repository
-publish_dir: ./public
-user_name: # your github user_name
-user_email: # your github email
-publish_branch: master # default: gh-pages
-&lt;/code>&lt;/pre>&lt;p>Now you need to commit and push your newly created action:&lt;/p>
-&lt;pre tabindex="0">&lt;code>git add .
-git commit -m &amp;quot;added github action&amp;quot;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open the deploy.yaml file in your favorite editor and paste:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">hugo publish&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">push&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">branches&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="l">master&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># deploy the site when there is a push to master branch.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">jobs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">build-deploy&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">runs-on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ubuntu-20.04&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">git checkout &lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">actions/checkout@v2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c">#with:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># submodules: true # Fetch Hugo themes (true OR recursive)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">update themes&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">git submodule update --init --recursive&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Setup Hugo&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">peaceiris/actions-hugo@v2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">hugo-version&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;latest&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">extended&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">hugo --minify&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">peaceiris/actions-gh-pages@v3&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">personal_token&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ secrets.GH_TOKEN }}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">external_repository&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">drgsn/drgsn.github.io&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c">#public repository&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">publish_dir&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">./public&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">user_name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># your github user_name&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">user_email&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># your github email&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nt">publish_branch: master # default&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">gh-pages&lt;/span>&lt;span class="w">
+&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you need to commit and push your newly created action:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">git add .
+git commit -m &lt;span class="s2">&amp;#34;added github action&amp;#34;&lt;/span>
 git push
-&lt;/code>&lt;/pre>&lt;p>After the action finishes running, you should see your site in your public repo. If you visit &lt;code>&amp;lt;username&amp;gt;.github.io&lt;/code> then your site should load.&lt;/p></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>After the action finishes running, you should see your site in your public repo. If you visit &lt;code>&amp;lt;username&amp;gt;.github.io&lt;/code> then your site should load.&lt;/p></description></item></channel></rss>
