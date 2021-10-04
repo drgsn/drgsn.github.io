@@ -246,7 +246,7 @@ alt="github-actions">
 &lt;p>This can easily be done by running the following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">mkdir -p .github/workflows &lt;span class="c1"># -p will create any parent directories if needed.&lt;/span>
 touch deploy.yaml
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open the deploy.yaml file in your favorite editor and paste:&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open the &lt;code>deploy.yaml&lt;/code> file in your favorite editor and paste:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">hugo publish&lt;/span>&lt;span class="w">
 &lt;/span>&lt;span class="w">
 &lt;/span>&lt;span class="w">&lt;/span>&lt;span class="nt">on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
