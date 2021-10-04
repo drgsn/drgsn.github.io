@@ -274,6 +274,7 @@ touch deploy.yaml
 git commit -m &lt;span class="s2">&amp;#34;added github action&amp;#34;&lt;/span>
 git push
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>After the action finishes running, you should see your site in your public repo. If you visit &lt;code>&amp;lt;USERNAME&amp;gt;.github.io/&amp;lt;public_repo_name&amp;gt;&lt;/code> then your site should load.&lt;/p>
+&lt;h2 id="use-custom-domain">Use custom domain&lt;/h2>
 &lt;p>We are getting close, but lets take it a step further and have a custom domain, and not a github.io one. In order to achive this we have only a couple of steps left to do.&lt;/p>
 &lt;ol>
 &lt;li>
@@ -310,14 +311,14 @@ loading="lazy"
 &lt;figure
 class="gallery-image"
 style="
-flex-grow: 214;
-flex-basis: 515px"
+flex-grow: 318;
+flex-basis: 763px"
 >
-&lt;a href="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-cname.png" data-size="189x88">
+&lt;a href="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-cname.png" data-size="1445x454">
 &lt;img src="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-cname.png"
-width="189"
-height="88"
-srcset="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-cname_hu299a866f912db88df9405eb49496ba07_3766_480x0_resize_box_3.png 480w, https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-cname_hu299a866f912db88df9405eb49496ba07_3766_1024x0_resize_box_3.png 1024w"
+width="1445"
+height="454"
+srcset="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-cname_hu864b7a7be61b78e154646c8588d5f0c9_44889_480x0_resize_box_3.png 480w, https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-cname_hu864b7a7be61b78e154646c8588d5f0c9_44889_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="cname file">
 &lt;/a>
@@ -354,5 +355,7 @@ alt="settings page">
 >GitHub Actions&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://www.youtube.com/watch?v=mPGi1IHQxFM" target="_blank" rel="noopener"
 >How To add a Custom Domain On Github Pages&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://www.richpauloo.com/post/gh-custom-url/" target="_blank" rel="noopener"
+>richpauloo - github custom url&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/blockquote></description></item></channel></rss>
