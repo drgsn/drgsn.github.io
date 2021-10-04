@@ -12,14 +12,14 @@ According to their site Hugo is a fast and modern static site generator written 
 Put it in layman terms Hugo is a tool that generates a full static HTML website based on raw data and a set of templates.">
 <meta property="og:url" content="https://drgos.com/p/how-to-host-you-site-on-github-for-free/">
 <meta property="og:site_name" content="DrGos">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="hugo"><meta property="article:tag" content="github"><meta property="article:published_time" content="2020-10-01T00:00:00+00:00"><meta property="article:modified_time" content="2020-10-01T00:00:00+00:00"><meta property="og:image" content="https://drgos.com/p/how-to-host-you-site-on-github-for-free/the-creative-exchange-d2zvqp3fpro-unsplash.jpg">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="hugo"><meta property="article:tag" content="github"><meta property="article:published_time" content="2020-10-01T00:00:00+00:00"><meta property="article:modified_time" content="2020-10-01T00:00:00+00:00"><meta property="og:image" content="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80">
 <meta name=twitter:site content="@DragosNM">
 <meta name=twitter:creator content="@DragosNM"><meta name=twitter:title content="How to host you site on Github for free!">
 <meta name=twitter:description content="I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.
 What is Hugo?  2560px-Logo_of_Hugo_the_static_website_generator.svg.png 
 According to their site Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
 Put it in layman terms Hugo is a tool that generates a full static HTML website based on raw data and a set of templates."><meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://drgos.com/p/how-to-host-you-site-on-github-for-free/the-creative-exchange-d2zvqp3fpro-unsplash.jpg">
+<meta name=twitter:image content="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80">
 </head>
 <body class="article-page has-toc">
 <script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
@@ -35,7 +35,7 @@ extended">
 <header class=article-header>
 <div class=article-image>
 <a href=/p/how-to-host-you-site-on-github-for-free/>
-<img src=/p/how-to-host-you-site-on-github-for-free/the-creative-exchange-d2zvqp3fpro-unsplash_huf941de4769045cdfa8c9ee7036519a2a_35369_800x0_resize_q75_box.jpg srcset="/p/how-to-host-you-site-on-github-for-free/the-creative-exchange-d2zvqp3fpro-unsplash_huf941de4769045cdfa8c9ee7036519a2a_35369_800x0_resize_q75_box.jpg 800w, /p/how-to-host-you-site-on-github-for-free/the-creative-exchange-d2zvqp3fpro-unsplash_huf941de4769045cdfa8c9ee7036519a2a_35369_1600x0_resize_q75_box.jpg 1600w" width=800 height=566 loading=lazy alt="Featured image of post How to host you site on Github for free!">
+<img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80" loading=lazy alt="Featured image of post How to host you site on Github for free!">
 </a>
 </div>
 <div class=article-details>
@@ -56,7 +56,7 @@ Github
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-6 minute read
+7 minute read
 </time>
 </div>
 </footer>
@@ -263,7 +263,7 @@ git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-them
 <h2 id=deploy-to-github-pages>Deploy to GitHub Pages</h2>
 <p>We will commit our posts to a private repository and we will publish them using GitHub Actions.</p>
 <p>The first thing that we need to do is to create 2 GitHub repositories (one public one and one private one) by visiting <a class=link href=https://repo.new/ target=_blank rel=noopener>repo.new</a>.</p>
-<p>The private one you can name it whatever you want, but the public one needs to be named <code>&lt;USERNAME>.github.io.</code> The repositories can be empty, you don&rsquo;t need <code>README.md</code> <code>.gitignore</code> or any other file.</p>
+<p>The private one you can name it whatever you want, but the public one needs to be named <code>&lt;USERNAME>.github.io.</code> or the name of your site. The repositories can be empty, you don&rsquo;t need <code>README.md</code> <code>.gitignore</code> or any other file.</p>
 <p>Once you have the repositories ready, we need to point the Hugo site to the private repo.</p>
 <p>Run the following commands in your site folder:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git init
@@ -294,7 +294,7 @@ touch deploy.yaml
 </span><span class=w>      </span><span class=c>#with:</span><span class=w>
 </span><span class=w>      </span><span class=c>#    submodules: true  # Fetch Hugo themes (true OR recursive)</span><span class=w>
 </span><span class=w>      </span><span class=c>#    fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod</span><span class=w>
-</span><span class=w>    
+</span><span class=w>  
 </span><span class=w>    </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>update themes</span><span class=w>
 </span><span class=w>      </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>git submodule update --init --recursive</span><span class=w>
 </span><span class=w>
@@ -306,22 +306,68 @@ touch deploy.yaml
 </span><span class=w>
 </span><span class=w>    </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Build</span><span class=w>
 </span><span class=w>      </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>hugo --minify</span><span class=w>
-</span><span class=w>    
+</span><span class=w>  
 </span><span class=w>    </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Deploy</span><span class=w>
 </span><span class=w>      </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-gh-pages@v3</span><span class=w>
 </span><span class=w>      </span><span class=nt>with</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>personal_token</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.GH_TOKEN }}</span><span class=w>
-</span><span class=w>        </span><span class=nt>external_repository</span><span class=p>:</span><span class=w> </span><span class=l>drgsn/drgsn.github.io</span><span class=w> </span><span class=c>#public repository</span><span class=w>
+</span><span class=w>        </span><span class=nt>external_repository</span><span class=p>:</span><span class=w> </span><span class=l>&lt;username&gt;/&lt;public_repository_name&gt;</span><span class=w> </span><span class=c>#public repository</span><span class=w>
 </span><span class=w>        </span><span class=nt>publish_dir</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
 </span><span class=w>        </span><span class=nt>user_name</span><span class=p>:</span><span class=w> </span><span class=c># your github user_name</span><span class=w>
 </span><span class=w>        </span><span class=nt>user_email</span><span class=p>:</span><span class=w> </span><span class=c># your github email</span><span class=w>
 </span><span class=w>        </span><span class=nt>publish_branch: master  # default</span><span class=p>:</span><span class=w> </span><span class=l>gh-pages</span><span class=w>
-</span><span class=w>        
+</span><span class=w>  
 </span></code></pre></div><p>Now you need to commit and push your newly created action:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git add .
 git commit -m <span class=s2>&#34;added github action&#34;</span>
 git push
-</code></pre></div><p>After the action finishes running, you should see your site in your public repo. If you visit <code>&lt;username>.github.io</code> then your site should load.</p>
+</code></pre></div><p>After the action finishes running, you should see your site in your public repo. If you visit <code>&lt;USERNAME>.github.io/&lt;public_repo_name></code> then your site should load.</p>
+<p>We are getting close, but lets take it a step further and have a custom domain, and not a github.io one. In order to achive this we have only a couple of steps left to do.</p>
+<ol>
+<li>
+<p>Make sure that you have a domain name
+You can buy a domain from <a class=link href=https://namecheap.com target=_blank rel=noopener>namecheap</a> or <a class=link href=https://www.godaddy.com target=_blank rel=noopener>godaddy</a> pr any other provider. Usually the prices are similar or the same between them, but you might find some providers that offer a domain for free for a limited period of time.</p>
+</li>
+<li>
+<p>Configure you domain to point to GitHub. In order to do this you need to add the following addresses as a records in your dns configuration.</p>
+<pre tabindex=0><code>185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+</code></pre></li>
+</ol>
+<p><figure class=gallery-image style=flex-grow:336;flex-basis:808px>
+<a href=/p/how-to-host-you-site-on-github-for-free/drgos-dns.png data-size=1233x366>
+<img src=/p/how-to-host-you-site-on-github-for-free/drgos-dns.png width=1233 height=366 srcset="/p/how-to-host-you-site-on-github-for-free/drgos-dns_hubaa38101884747bdbe3009e0e0ef35ca_26932_480x0_resize_box_3.png 480w, /p/how-to-host-you-site-on-github-for-free/drgos-dns_hubaa38101884747bdbe3009e0e0ef35ca_26932_1024x0_resize_box_3.png 1024w" loading=lazy>
+</a>
+</figure></p>
+<ol start=3>
+<li>Add a <code>CNAME</code> file inside your site the <code>static</code> folder. This will ensure that everytime you publish your changes, the CNAME will be published too.
+<figure class=gallery-image style=flex-grow:214;flex-basis:515px>
+<a href=/p/how-to-host-you-site-on-github-for-free/drgos-cname.png data-size=189x88>
+<img src=/p/how-to-host-you-site-on-github-for-free/drgos-cname.png width=189 height=88 srcset="/p/how-to-host-you-site-on-github-for-free/drgos-cname_hu299a866f912db88df9405eb49496ba07_3766_480x0_resize_box_3.png 480w, /p/how-to-host-you-site-on-github-for-free/drgos-cname_hu299a866f912db88df9405eb49496ba07_3766_1024x0_resize_box_3.png 1024w" loading=lazy alt="cname file">
+</a>
+<figcaption>cname file</figcaption>
+</figure></li>
+<li>Go to your public domain Settings -> Pages and add the custom domain there. After a couple of hours, the enforce HTTPS option will become available. Make sure to check that too.
+<figure class=gallery-image style=flex-grow:245;flex-basis:588px>
+<a href=/p/how-to-host-you-site-on-github-for-free/drgos-settings.png data-size=1668x680>
+<img src=/p/how-to-host-you-site-on-github-for-free/drgos-settings.png width=1668 height=680 srcset="/p/how-to-host-you-site-on-github-for-free/drgos-settings_hu35c346b2a20c7841380b68165021b7f7_114819_480x0_resize_box_3.png 480w, /p/how-to-host-you-site-on-github-for-free/drgos-settings_hu35c346b2a20c7841380b68165021b7f7_114819_1024x0_resize_box_3.png 1024w" loading=lazy alt="settings page">
+</a>
+<figcaption>settings page</figcaption>
+</figure></li>
+</ol>
+<p>And you should be done. Now you have your static site deployed on github that gets updated everytime you do a push on your private repo.</p>
+<p>If you ran into any problems, don&rsquo;t esitate to comment and I will try to help out 😉.</p>
+<blockquote>
+<p>Credits:</p>
+<ul>
+<li>post image <a class=link href="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80" target=_blank rel=noopener>RyanAncill - unsplash</a></li>
+<li><a class=link href=https://gohugo.io/getting-started/ target=_blank rel=noopener>Hugo Documentation</a></li>
+<li><a class=link href=https://docs.github.com/en/actions target=_blank rel=noopener>GitHub Actions</a></li>
+<li><a class=link href="https://www.youtube.com/watch?v=mPGi1IHQxFM" target=_blank rel=noopener>How To add a Custom Domain On Github Pages</a></li>
+</ul>
+</blockquote>
 </section>
 <footer class=article-footer>
 <section class=article-tags>
