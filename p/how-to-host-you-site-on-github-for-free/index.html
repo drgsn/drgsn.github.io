@@ -274,7 +274,14 @@ git push origin master
 </code></pre></div><p>After successfully committed, visit your private repository, you should see everything that was in your site folder. If everything looks as expected, it time to set up GitHub Actions to publish you site to the public repository.</p>
 <h3 id=setup-github-actions-to-publish-changes>Setup GitHub Actions to publish changes</h3>
 <p>Once we have the repositories ready, it&rsquo;s time to setup the GitHub Actions.
-This can easily be done by adding a <code>deploy.yaml</code> in <code>your_site/.github/workflows</code></p>
+This can easily be done by adding a <code>deploy.yaml</code> in <code>your_site/.github/workflows</code>
+<figure class=gallery-image style=flex-grow:164;flex-basis:395px>
+<a href=/p/how-to-host-you-site-on-github-for-free/github-actions.png data-size=1516x921>
+<img src=/p/how-to-host-you-site-on-github-for-free/github-actions.png width=1516 height=921 srcset="/p/how-to-host-you-site-on-github-for-free/github-actions_huaf132e6fd0a926cf14fe43e67ac93b2f_158385_480x0_resize_box_3.png 480w, /p/how-to-host-you-site-on-github-for-free/github-actions_huaf132e6fd0a926cf14fe43e67ac93b2f_158385_1024x0_resize_box_3.png 1024w" loading=lazy alt=github-actions>
+</a>
+<figcaption>github-actions</figcaption>
+</figure></p>
+<p>This can easily be done by running the following commands:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>mkdir -p .github/workflows <span class=c1># -p will create any parent directories if needed.</span>
 touch deploy.yaml 
 </code></pre></div><p>Open the deploy.yaml file in your favorite editor and paste:</p>
