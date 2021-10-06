@@ -1,0 +1,198 @@
+<!doctype html><html lang=en-us>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="There is an old saying, &amp;ldquo;If the only tool you have is a hammer, you will start treating all your problems like a nail.”
+This quote dates back to 1964 and Abraham Kaplan, whose first wording was actually:
+&amp;ldquo;Give a small boy a hammer and he will find that everything he encounters needs a pounding.&amp;rdquo;
+ I&amp;rsquo;ve noticed that in Software Engineering interviews there is a big accent on algorithms and data structures, but not on design patterns, at least not when you are starting out."><title>Design Patterns Intro</title>
+<link rel=canonical href=https://drgos.com/p/design-patterns-intro/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Design Patterns Intro">
+<meta property="og:description" content="There is an old saying, &amp;ldquo;If the only tool you have is a hammer, you will start treating all your problems like a nail.”
+This quote dates back to 1964 and Abraham Kaplan, whose first wording was actually:
+&amp;ldquo;Give a small boy a hammer and he will find that everything he encounters needs a pounding.&amp;rdquo;
+ I&amp;rsquo;ve noticed that in Software Engineering interviews there is a big accent on algorithms and data structures, but not on design patterns, at least not when you are starting out.">
+<meta property="og:url" content="https://drgos.com/p/design-patterns-intro/">
+<meta property="og:site_name" content="DrGos">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="design-patterns"><meta property="article:published_time" content="2021-10-06T22:43:56+03:00"><meta property="article:modified_time" content="2021-10-06T22:43:56+03:00"><meta property="og:image" content="https://images.unsplash.com/photo-1566937169390-7be4c63b8a0e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1738&q=80">
+<meta name=twitter:site content="@DragosNM">
+<meta name=twitter:creator content="@DragosNM"><meta name=twitter:title content="Design Patterns Intro">
+<meta name=twitter:description content="There is an old saying, &amp;ldquo;If the only tool you have is a hammer, you will start treating all your problems like a nail.”
+This quote dates back to 1964 and Abraham Kaplan, whose first wording was actually:
+&amp;ldquo;Give a small boy a hammer and he will find that everything he encounters needs a pounding.&amp;rdquo;
+ I&amp;rsquo;ve noticed that in Software Engineering interviews there is a big accent on algorithms and data structures, but not on design patterns, at least not when you are starting out."><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://images.unsplash.com/photo-1566937169390-7be4c63b8a0e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1738&q=80">
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"auto")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+on-phone--column extended">
+<aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header class=site-info>
+<figure class=site-avatar>
+<img src=https://drgos.com/images/profile.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+<span class=emoji>☕</span>
+</figure>
+<h1 class=site-name><a href=https://drgos.com>DrGos</a></h1>
+<h2 class=site-description>Hi, my name is Dragos and I'm a full stack engineer.</h2>
+</header>
+<ol class=menu id=main-menu>
+<li>
+<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span>
+</a>
+</li>
+<li>
+<a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About</span>
+</a>
+</li>
+<li>
+<a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span>
+</a>
+</li>
+<li>
+<a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span>
+</a>
+</li>
+<li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span>
+</li>
+</ol>
+</aside>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class=article-header>
+<div class=article-image>
+<a href=/p/design-patterns-intro/>
+<img src="https://images.unsplash.com/photo-1566937169390-7be4c63b8a0e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1738&q=80" loading=lazy alt="Featured image of post Design Patterns Intro">
+</a>
+</div>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/design-patterns/>
+Design Patterns
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/design-patterns-intro/>Design Patterns Intro</a>
+</h2>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Oct 06, 2021</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+3 minute read
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<blockquote>
+<p>There is an old saying, &ldquo;If the only tool you have is a hammer, you will start treating all your problems like a nail.”</p>
+<p>This quote dates back to 1964 and Abraham Kaplan, whose first wording was actually:</p>
+<p>&ldquo;Give a small boy a hammer and he will find that everything he encounters needs a pounding.&rdquo;</p>
+</blockquote>
+<p>I&rsquo;ve noticed that in Software Engineering interviews there is a big accent on algorithms and data structures, but not on design patterns, at least not when you are starting out.
+Based on this assumption, I think that we encourage people to learn a lot of algorithms that they might not use (but nevertheless might be helpful to know about) and not learn about different design patterns, that will come in handy when they need to design different solutions. When they&rsquo;ll learn a new design pattern, they will start to overuse it, just like a small boy with a hammer or Jeremy Clarkson.</p>
+<p><figure class=gallery-image style=flex-grow:104;flex-basis:251px>
+<a href=/p/design-patterns-intro/hammer.png data-size=700x669>
+<img src=/p/design-patterns-intro/hammer.png width=700 height=669 srcset="/p/design-patterns-intro/hammer_hu463f0d3785b52615cb8ae395d74932d0_466233_480x0_resize_box_3.png 480w, /p/design-patterns-intro/hammer_hu463f0d3785b52615cb8ae395d74932d0_466233_1024x0_resize_box_3.png 1024w" loading=lazy>
+</a>
+</figure></p>
+<p>I know that when you start advacing in your career you&rsquo;ll start to learn different design patterns, understand why they are important and when to use them, but you shouldn&rsquo;t hit the wall before you start to see. You should learn about these patterns before you actually need them, so when the ocassion presents itself, you know which one to use.
+I don&rsquo;t remember to been thaught about design patterns during my university years, so I&rsquo;m taking the time know to write about some patterns that I&rsquo;ve used and about some that I&rsquo;ve learned, but didn&rsquo;t have the chance to use.</p>
+<p>I will write posts about different patterns that are in general usefull in object oriented programming(because that&rsquo;s what I&rsquo;ve mostly used) and I&rsquo;m starting this series with the Proxy Pattern.
+I&rsquo;ve used it recently at work when I needed to do some refactoring and when it was put in a <a class=link href=https://www.atlassian.com/git/tutorials/making-a-pull-request target=_blank rel=noopener>PR(pull request)</a> the reviewers were impresent.
+I know either the person that implemented to solution or one of the reviewers should&rsquo;ve thought that this pattern was the perfect fit, but what if the implementer didn&rsquo;t know about it and the reviers didn&rsquo;t actually think if the solution was the best one, but were only interested that it works and is cleanly implemented? I&rsquo;ve been guilty of both of those things before.</p>
+<p>Lastly, lets give a definition for design patterns:
+Design patterns represent the best practices used by software developers. Design patterns are template solutions to general problems that software developers try to solve. These solutions were obtained by trial and error and were deemed the best way to solve the problem</p>
+<blockquote>
+<p><a class=link href=https://en.wikipedia.org/wiki/Software_design_pattern#Practice target=_blank rel=noopener>From Wikipedia</a>: Design patterns can speed up the development process by providing tested, proven development paradigms. Effective software design requires considering issues that may not become visible until later in the implementation. Freshly written code can often have hidden subtle issues that take time to be detected, issues that sometimes can cause major problems down the road. Reusing design patterns helps to prevent such subtle issues, and it also improves code readability for coders and architects who are familiar with the patterns.</p>
+</blockquote>
+<blockquote>
+<p>By definition, a pattern must be programmed anew into each application that uses it. Since some authors see this as a step backward from software reuse as provided by components, researchers have worked to turn patterns into components. Meyer and Arnout were able to provide full or partial componentization of two-thirds of the patterns they attempted.</p>
+</blockquote>
+<blockquote>
+<p>Credits:</p>
+<ul>
+<li><a class=link href=https://unsplash.com/photos/XZuqMUiSdgc target=_blank rel=noopener>Post Image</a> - <a class=link href=https://unsplash.com/@mphotographym target=_blank rel=noopener>Moritz Mentges</a></li>
+<li><a class=link href=https://en.wikipedia.org/wiki/Software_design_pattern#Practice target=_blank rel=noopener>Wikipedia - Design Patterns</a></li>
+<li><a class=link href=https://www.atlassian.com/git/tutorials/making-a-pull-request target=_blank rel=noopener>Atlassian - Pull Request</a></li>
+</ul>
+</blockquote>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/design-patterns/>design-patterns</a>
+</section>
+<section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+</aside>
+<script src=https://utteranc.es/client.js repo=drgsn/drgsn.github.io issue-term=pathname label=Comment crossorigin=anonymous async></script>
+<style>.utterances{max-width:unset}</style>
+<script>function setUtterancesTheme(b){let a=document.querySelector('.utterances iframe');a&&a.contentWindow.postMessage({type:'set-theme',theme:`github-${b}`},'https://utteranc.es')}addEventListener('message',a=>{if(a.origin!=='https://utteranc.es')return;setUtterancesTheme(document.documentElement.dataset.scheme)}),window.addEventListener('onColorSchemeChange',a=>{setUtterancesTheme(a.detail)})</script>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2021 DrGos
+</section>
+<section class=powerby>
+If you want to collaborate, just reach out! <br>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.2.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>
