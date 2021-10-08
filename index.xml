@@ -46,7 +46,7 @@ Design patterns are template solutions to general problems that software develop
 &lt;li>&lt;a class="link" href="https://www.atlassian.com/git/tutorials/making-a-pull-request" target="_blank" rel="noopener"
 >Atlassian - Pull Request&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;/blockquote></description></item><item><title>How to host you site on Github for free!</title><link>https://drgos.com/p/how-to-host-you-site-on-github-for-free/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://drgos.com/p/how-to-host-you-site-on-github-for-free/</guid><description>&lt;img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80" alt="Featured image of post How to host you site on Github for free!" />&lt;p>I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.&lt;/p>
+&lt;/blockquote></description></item><item><title>How to host your site on Github for free!</title><link>https://drgos.com/p/how-to-host-your-site-on-github-for-free/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://drgos.com/p/how-to-host-your-site-on-github-for-free/</guid><description>&lt;img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80" alt="Featured image of post How to host your site on Github for free!" />&lt;p>I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.&lt;/p>
 &lt;h2 id="what-is-hugo">What is Hugo?&lt;/h2>
 &lt;p>&lt;figure
 >
@@ -281,11 +281,11 @@ style="
 flex-grow: 164;
 flex-basis: 395px"
 >
-&lt;a href="https://drgos.com/p/how-to-host-you-site-on-github-for-free/github-actions.png" data-size="1516x921">
-&lt;img src="https://drgos.com/p/how-to-host-you-site-on-github-for-free/github-actions.png"
+&lt;a href="https://drgos.com/p/how-to-host-your-site-on-github-for-free/github-actions.png" data-size="1516x921">
+&lt;img src="https://drgos.com/p/how-to-host-your-site-on-github-for-free/github-actions.png"
 width="1516"
 height="921"
-srcset="https://drgos.com/p/how-to-host-you-site-on-github-for-free/github-actions_huaf132e6fd0a926cf14fe43e67ac93b2f_158385_480x0_resize_box_3.png 480w, https://drgos.com/p/how-to-host-you-site-on-github-for-free/github-actions_huaf132e6fd0a926cf14fe43e67ac93b2f_158385_1024x0_resize_box_3.png 1024w"
+srcset="https://drgos.com/p/how-to-host-your-site-on-github-for-free/github-actions_huaf132e6fd0a926cf14fe43e67ac93b2f_158385_480x0_resize_box_3.png 480w, https://drgos.com/p/how-to-host-your-site-on-github-for-free/github-actions_huaf132e6fd0a926cf14fe43e67ac93b2f_158385_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="github-actions">
 &lt;/a>
@@ -362,11 +362,11 @@ style="
 flex-grow: 336;
 flex-basis: 808px"
 >
-&lt;a href="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-dns.png" data-size="1233x366">
-&lt;img src="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-dns.png"
+&lt;a href="https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-dns.png" data-size="1233x366">
+&lt;img src="https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-dns.png"
 width="1233"
 height="366"
-srcset="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-dns_hubaa38101884747bdbe3009e0e0ef35ca_26932_480x0_resize_box_3.png 480w, https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-dns_hubaa38101884747bdbe3009e0e0ef35ca_26932_1024x0_resize_box_3.png 1024w"
+srcset="https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-dns_hubaa38101884747bdbe3009e0e0ef35ca_26932_480x0_resize_box_3.png 480w, https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-dns_hubaa38101884747bdbe3009e0e0ef35ca_26932_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 >
 &lt;/a>
@@ -379,11 +379,11 @@ style="
 flex-grow: 318;
 flex-basis: 763px"
 >
-&lt;a href="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-cname.png" data-size="1445x454">
-&lt;img src="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-cname.png"
+&lt;a href="https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-cname.png" data-size="1445x454">
+&lt;img src="https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-cname.png"
 width="1445"
 height="454"
-srcset="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-cname_hu864b7a7be61b78e154646c8588d5f0c9_44889_480x0_resize_box_3.png 480w, https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-cname_hu864b7a7be61b78e154646c8588d5f0c9_44889_1024x0_resize_box_3.png 1024w"
+srcset="https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-cname_hu864b7a7be61b78e154646c8588d5f0c9_44889_480x0_resize_box_3.png 480w, https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-cname_hu864b7a7be61b78e154646c8588d5f0c9_44889_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="cname file">
 &lt;/a>
@@ -396,11 +396,11 @@ style="
 flex-grow: 245;
 flex-basis: 588px"
 >
-&lt;a href="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-settings.png" data-size="1668x680">
-&lt;img src="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-settings.png"
+&lt;a href="https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-settings.png" data-size="1668x680">
+&lt;img src="https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-settings.png"
 width="1668"
 height="680"
-srcset="https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-settings_hu35c346b2a20c7841380b68165021b7f7_114819_480x0_resize_box_3.png 480w, https://drgos.com/p/how-to-host-you-site-on-github-for-free/drgos-settings_hu35c346b2a20c7841380b68165021b7f7_114819_1024x0_resize_box_3.png 1024w"
+srcset="https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-settings_hu35c346b2a20c7841380b68165021b7f7_114819_480x0_resize_box_3.png 480w, https://drgos.com/p/how-to-host-your-site-on-github-for-free/drgos-settings_hu35c346b2a20c7841380b68165021b7f7_114819_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="settings page">
 &lt;/a>
