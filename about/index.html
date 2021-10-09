@@ -71,7 +71,7 @@ DrGos Blog - I'm a full stack engineer with a passion for Java, JavaScript and f
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
 <time class=article-time--reading>
-1 minute read
+3 minute read
 </time>
 </div>
 </footer>
@@ -79,12 +79,239 @@ DrGos Blog - I'm a full stack engineer with a passion for Java, JavaScript and f
 </header>
 <section class=article-content>
 <h2 id=contact-me>Contact Me</h2>
-<form action=https://getform.io/f/af9a507f-5c32-4b0e-ba19-8d340a32345e method=post>
-<input type=text name=name>
-<input type=email name=email>
-<input type=text name=message>
-<button type=submit>Send</button>
-</form>
+<pre><code>&lt;style&gt; 
+</code></pre>
+<p>body, button, input {
+font-family: &lsquo;Montserrat&rsquo;, sans-serif;
+font-weight: 700;
+letter-spacing: 1.4px;
+}</p>
+<p>.container {
+flex: 0 1 700px;
+margin: auto;
+padding: 10px;
+}</p>
+<p>.screen {
+position: relative;
+background: #3e3e3e;
+border-radius: 15px;
+}</p>
+<p>.screen:after {
+content: &lsquo;';
+display: block;
+position: absolute;
+top: 0;
+left: 20px;
+right: 20px;
+bottom: 0;
+border-radius: 15px;
+box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+z-index: -1;
+}</p>
+<p>.screen-header {
+display: flex;
+align-items: center;
+padding: 10px 20px;
+background: #4d4d4f;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+}</p>
+<p>.screen-header-left {
+margin-right: auto;
+}</p>
+<p>.screen-header-button {
+display: inline-block;
+width: 8px;
+height: 8px;
+margin-right: 3px;
+border-radius: 8px;
+background: white;
+}</p>
+<p>.screen-header-button.close {
+background: #ed1c6f;
+}</p>
+<p>.screen-header-button.maximize {
+background: #e8e925;
+}</p>
+<p>.screen-header-button.minimize {
+background: #74c54f;
+}</p>
+<p>.screen-header-right {
+display: flex;
+}</p>
+<p>.screen-header-ellipsis {
+width: 3px;
+height: 3px;
+margin-left: 2px;
+border-radius: 8px;
+background: #999;
+}</p>
+<p>.screen-body {
+display: flex;
+}</p>
+<p>.screen-body-item {
+flex: 1;
+padding: 50px;
+}</p>
+<p>.screen-body-item.left {
+display: flex;
+flex-direction: column;
+}</p>
+<p>.app-title {
+display: flex;
+flex-direction: column;
+position: relative;
+color: #ea1d6f;
+font-size: 26px;
+}</p>
+<p>.app-title:after {
+content: &lsquo;';
+display: block;
+position: absolute;
+left: 0;
+bottom: -10px;
+width: 25px;
+height: 4px;
+background: #ea1d6f;
+}</p>
+<p>.app-contact {
+margin-top: auto;
+font-size: 8px;
+color: #888;
+}</p>
+<p>.app-form-group {
+margin-bottom: 15px;
+}</p>
+<p>.app-form-group.message {
+margin-top: 40px;
+}</p>
+<p>.app-form-group.buttons {
+margin-bottom: 0;
+text-align: right;
+}</p>
+<p>.app-form-control {
+width: 100%;
+padding: 10px 0;
+background: none;
+border: none;
+border-bottom: 1px solid #666;
+color: #ddd;
+font-size: 14px;
+text-transform: uppercase;
+outline: none;
+transition: border-color .2s;
+}</p>
+<p>.app-form-control::placeholder {
+color: #666;
+}</p>
+<p>.app-form-control:focus {
+border-bottom-color: #ddd;
+}</p>
+<p>.app-form-button {
+background: none;
+border: none;
+color: #ea1d6f;
+font-size: 14px;
+cursor: pointer;
+outline: none;
+}</p>
+<p>.app-form-button:hover {
+color: #b9134f;
+}</p>
+<p>.credits {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
+color: #ffa4bd;
+font-family: &lsquo;Roboto Condensed&rsquo;, sans-serif;
+font-size: 16px;
+font-weight: normal;
+}</p>
+<p>.credits-link {
+display: flex;
+align-items: center;
+color: #fff;
+font-weight: bold;
+text-decoration: none;
+}</p>
+<p>.dribbble {
+width: 20px;
+height: 20px;
+margin: 0 5px;
+}</p>
+<p>@media screen and (max-width: 520px) {
+.screen-body {
+flex-direction: column;
+}</p>
+<p>.screen-body-item.left {
+margin-bottom: 30px;
+}</p>
+<p>.app-title {
+flex-direction: row;
+}</p>
+<p>.app-title span {
+margin-right: 12px;
+}</p>
+<p>.app-title:after {
+display: none;
+}
+}</p>
+<p>@media screen and (max-width: 600px) {
+.screen-body {
+padding: 40px;
+}</p>
+<p>.screen-body-item {
+padding: 0;
+}
+}</p>
+<pre><code>&lt;/style&gt;
+
+
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;screen&quot;&gt;
+  &lt;div class=&quot;screen-header&quot;&gt;
+    &lt;div class=&quot;screen-header-left&quot;&gt;
+      &lt;div class=&quot;screen-header-button close&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;screen-header-button maximize&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;screen-header-button minimize&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;screen-header-right&quot;&gt;a
+      &lt;div class=&quot;screen-header-ellipsis&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;screen-header-ellipsis&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;screen-header-ellipsis&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;screen-body&quot;&gt;
+    &lt;div class=&quot;screen-body-item left&quot;&gt;
+      &lt;div class=&quot;app-title&quot;&gt;
+        &lt;span&gt;CONTACT&lt;/span&gt;
+        &lt;span&gt;ME&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;screen-body-item&quot;&gt;
+      &lt;form action=&quot;https://getform.io/f/af9a507f-5c32-4b0e-ba19-8d340a32345e&quot; method=&quot;POST&quot;&gt;
+
+        &lt;div class=&quot;app-form&quot;&gt;
+          &lt;div class=&quot;app-form-group&quot;&gt;
+            &lt;input type=&quot;text&quot; name=&quot;name&quot;  class=&quot;app-form-control&quot; placeholder=&quot;NAME&quot; value=&quot;John Doe&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;app-form-group&quot;&gt;
+            &lt;input type=&quot;email&quot; name=&quot;email&quot; class=&quot;app-form-control&quot; placeholder=&quot;EMAIL&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;app-form-group message&quot;&gt;
+            &lt;input type=&quot;text&quot; name=&quot;message&quot;  class=&quot;app-form-control&quot; placeholder=&quot;MESSAGE&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;app-form-group buttons&quot;&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;app-form-button&quot;&gt;SEND&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
 </section>
 <footer class=article-footer>
 <section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
