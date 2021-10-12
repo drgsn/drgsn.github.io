@@ -5,8 +5,8 @@
 &lt;p>Keeping the previous analogy in mind, let&amp;rsquo;s look at a diagram of how we would use the factory pattern.&lt;/p>
 &lt;p>&lt;figure
 >
-&lt;a href="https://drgos.com/factory-pattern.svg" >
-&lt;img src="https://drgos.com/factory-pattern.svg"
+&lt;a href="https://drgos.com/assets/20211013_020335_factory-pattern.svg" >
+&lt;img src="https://drgos.com/assets/20211013_020335_factory-pattern.svg"
 loading="lazy"
 >
 &lt;/a>
@@ -16,72 +16,72 @@ loading="lazy"
 &lt;h3 id="step-1">Step 1&lt;/h3>
 &lt;p>Create an interface.&lt;/p>
 &lt;p>&lt;em>Car.java&lt;/em>&lt;/p>
-&lt;pre tabindex="0">&lt;code>public interface Car {
-void drive();
-}
-&lt;/code>&lt;/pre>&lt;h3 id="step-2">Step 2&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kd">public&lt;/span> &lt;span class="kd">interface&lt;/span> &lt;span class="nc">Car&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kt">void&lt;/span> &lt;span class="nf">drive&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-2">Step 2&lt;/h3>
 &lt;p>Create concrete classes implementing the same interface.&lt;/p>
 &lt;p>&lt;em>ModelA.java&lt;/em>&lt;/p>
-&lt;pre tabindex="0">&lt;code>public class ModelA implements Car {
-@Override
-public void drive() {
-System.out.println(&amp;quot;Inside ModelA::drive() method.&amp;quot;);
-}
-}
-&lt;/code>&lt;/pre>&lt;p>&lt;em>ModelB.java&lt;/em>&lt;/p>
-&lt;pre tabindex="0">&lt;code>public class ModelB implements Car {
-@Override
-public void drive() {
-System.out.println(&amp;quot;Inside ModelB::drive() method.&amp;quot;);
-}
-}
-&lt;/code>&lt;/pre>&lt;p>&lt;em>Model.java&lt;/em>&lt;/p>
-&lt;pre tabindex="0">&lt;code>public class ModelC implements Car {
-@Override
-public void drive() {
-System.out.println(&amp;quot;Inside ModelC::drive() method.&amp;quot;);
-}
-}
-&lt;/code>&lt;/pre>&lt;h3 id="step-3">Step 3&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">ModelA&lt;/span> &lt;span class="kd">implements&lt;/span> &lt;span class="n">Car&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="nd">@Override&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">drive&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;Inside ModelA::drive() method.&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>ModelB.java&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">ModelB&lt;/span> &lt;span class="kd">implements&lt;/span> &lt;span class="n">Car&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="nd">@Override&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">drive&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;Inside ModelB::drive() method.&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>Model.java&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">ModelC&lt;/span> &lt;span class="kd">implements&lt;/span> &lt;span class="n">Car&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="nd">@Override&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">drive&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;Inside ModelC::drive() method.&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3">Step 3&lt;/h3>
 &lt;p>Create a Factory to generate an object of concrete class based on given information.&lt;/p>
 &lt;p>&lt;em>CarFactory.java&lt;/em>&lt;/p>
-&lt;pre tabindex="0">&lt;code>public class CarFactory {
-//use getCarModel method to get object of type Car
-public Car getCarModel(String carModel){
-if(carModel == null){
-return null;
-}
-if(carModel.equalsIgnoreCase(&amp;quot;ModelA&amp;quot;)){
-return new ModelA();
-} else if(carModel.equalsIgnoreCase(&amp;quot;ModelB&amp;quot;)){
-return new ModelB();
-} else if(carModel.equalsIgnoreCase(&amp;quot;ModelC&amp;quot;)){
-return new ModelC();
-}
-return null;
-}
-}
-&lt;/code>&lt;/pre>&lt;h3 id="step-4">Step 4&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">CarFactory&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="c1">//use getCarModel method to get object of type Car
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="kd">public&lt;/span> &lt;span class="n">Car&lt;/span> &lt;span class="nf">getCarModel&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">String&lt;/span> &lt;span class="n">carModel&lt;/span>&lt;span class="o">){&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">carModel&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">){&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">carModel&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">equalsIgnoreCase&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;ModelA&amp;#34;&lt;/span>&lt;span class="o">)){&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ModelA&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;span class="o">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">carModel&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">equalsIgnoreCase&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;ModelB&amp;#34;&lt;/span>&lt;span class="o">)){&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ModelB&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;span class="o">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="k">if&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">carModel&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">equalsIgnoreCase&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;ModelC&amp;#34;&lt;/span>&lt;span class="o">)){&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ModelC&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="k">return&lt;/span> &lt;span class="kc">null&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4">Step 4&lt;/h3>
 &lt;p>Use the Factory to get the objects of the concrete class by passing information such as type.&lt;/p>
 &lt;p>&lt;em>FactoryPatternDemo.java&lt;/em>&lt;/p>
-&lt;pre tabindex="0">&lt;code>public class FactoryPatternDemo {
-public static void main(String[] args) {
-CarFactory carFactory = new CarFactory();
-//get an object of ModelA and call its drive method.
-Car modelA = carFactory.getCarModel(&amp;quot;ModelA&amp;quot;);
-//call drive method of ModelA
-modelA.drive();
-//get an object of ModelB and call its drive method.
-Car modelB = carFactory.getCarModel(&amp;quot;ModelB&amp;quot;);
-//call drive method of ModelB
-modelB.drive();
-//get an object of ModelC and call its drive method.
-Car modelC = carFactory.getCarModel(&amp;quot;ModelC&amp;quot;);
-//call drive method of ModelC
-modelC.drive();
-}
-}
-&lt;/code>&lt;/pre>&lt;h3 id="step-5">Step 5&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">FactoryPatternDemo&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="kd">public&lt;/span> &lt;span class="kd">static&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">[]&lt;/span> &lt;span class="n">args&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;span class="n">CarFactory&lt;/span> &lt;span class="n">carFactory&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">CarFactory&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;span class="c1">//get an object of ModelA and call its drive method.
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">Car&lt;/span> &lt;span class="n">modelA&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">carFactory&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getCarModel&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;ModelA&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="c1">//call drive method of ModelA
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">modelA&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">drive&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;span class="c1">//get an object of ModelB and call its drive method.
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">Car&lt;/span> &lt;span class="n">modelB&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">carFactory&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getCarModel&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;ModelB&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="c1">//call drive method of ModelB
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">modelB&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">drive&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;span class="c1">//get an object of ModelC and call its drive method.
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">Car&lt;/span> &lt;span class="n">modelC&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">carFactory&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getCarModel&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;ModelC&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;span class="c1">//call drive method of ModelC
+&lt;/span>&lt;span class="c1">&lt;/span> &lt;span class="n">modelC&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">drive&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;span class="o">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5">Step 5&lt;/h3>
 &lt;p>Verify the output.&lt;/p>
 &lt;pre tabindex="0">&lt;code>Inside ModelA::drive() method.
 Inside ModelB::drive() method.

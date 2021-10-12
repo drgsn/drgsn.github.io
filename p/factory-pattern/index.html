@@ -63,8 +63,8 @@ Creational Pattern
 <h2 id=implementation>Implementation</h2>
 <p>Keeping the previous analogy in mind, let&rsquo;s look at a diagram of how we would use the factory pattern.</p>
 <p><figure>
-<a href=/factory-pattern.svg>
-<img src=/factory-pattern.svg loading=lazy>
+<a href=/assets/20211013_020335_factory-pattern.svg>
+<img src=/assets/20211013_020335_factory-pattern.svg loading=lazy>
 </a>
 </figure></p>
 <p>We&rsquo;re going to create a Car interface and a few classes implementing the Car interface. A factory class CarFactory is defined as the next step.</p>
@@ -72,86 +72,86 @@ Creational Pattern
 <h3 id=step-1>Step 1</h3>
 <p>Create an interface.</p>
 <p><em>Car.java</em></p>
-<pre tabindex=0><code>public interface Car {
-   void drive();
-}
-</code></pre><h3 id=step-2>Step 2</h3>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>interface</span> <span class=nc>Car</span> <span class=o>{</span>
+   <span class=kt>void</span> <span class=nf>drive</span><span class=o>();</span>
+<span class=o>}</span>
+</code></pre></div><h3 id=step-2>Step 2</h3>
 <p>Create concrete classes implementing the same interface.</p>
 <p><em>ModelA.java</em></p>
-<pre tabindex=0><code>public class ModelA implements Car {
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ModelA</span> <span class=kd>implements</span> <span class=n>Car</span> <span class=o>{</span>
 
-   @Override
-   public void drive() {
-      System.out.println(&quot;Inside ModelA::drive() method.&quot;);
-   }
-}
-</code></pre><p><em>ModelB.java</em></p>
-<pre tabindex=0><code>public class ModelB implements Car {
+   <span class=nd>@Override</span>
+   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>drive</span><span class=o>()</span> <span class=o>{</span>
+      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Inside ModelA::drive() method.&#34;</span><span class=o>);</span>
+   <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><p><em>ModelB.java</em></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ModelB</span> <span class=kd>implements</span> <span class=n>Car</span> <span class=o>{</span>
 
-   @Override
-   public void drive() {
-      System.out.println(&quot;Inside ModelB::drive() method.&quot;);
-   }
-}
-</code></pre><p><em>Model.java</em></p>
-<pre tabindex=0><code>public class ModelC implements Car {
+   <span class=nd>@Override</span>
+   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>drive</span><span class=o>()</span> <span class=o>{</span>
+      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Inside ModelB::drive() method.&#34;</span><span class=o>);</span>
+   <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><p><em>Model.java</em></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ModelC</span> <span class=kd>implements</span> <span class=n>Car</span> <span class=o>{</span>
 
-   @Override
-   public void drive() {
-      System.out.println(&quot;Inside ModelC::drive() method.&quot;);
-   }
-}
-</code></pre><h3 id=step-3>Step 3</h3>
+   <span class=nd>@Override</span>
+   <span class=kd>public</span> <span class=kt>void</span> <span class=nf>drive</span><span class=o>()</span> <span class=o>{</span>
+      <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Inside ModelC::drive() method.&#34;</span><span class=o>);</span>
+   <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><h3 id=step-3>Step 3</h3>
 <p>Create a Factory to generate an object of concrete class based on given information.</p>
 <p><em>CarFactory.java</em></p>
-<pre tabindex=0><code>public class CarFactory {
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>class</span> <span class=nc>CarFactory</span> <span class=o>{</span>
 
-   //use getCarModel method to get object of type Car 
-   public Car getCarModel(String carModel){
-      if(carModel == null){
-         return null;
-      } 
-      if(carModel.equalsIgnoreCase(&quot;ModelA&quot;)){
-         return new ModelA();
+   <span class=c1>//use getCarModel method to get object of type Car 
+</span><span class=c1></span>   <span class=kd>public</span> <span class=n>Car</span> <span class=nf>getCarModel</span><span class=o>(</span><span class=n>String</span> <span class=n>carModel</span><span class=o>){</span>
+      <span class=k>if</span><span class=o>(</span><span class=n>carModel</span> <span class=o>==</span> <span class=kc>null</span><span class=o>){</span>
+         <span class=k>return</span> <span class=kc>null</span><span class=o>;</span>
+      <span class=o>}</span> 
+      <span class=k>if</span><span class=o>(</span><span class=n>carModel</span><span class=o>.</span><span class=na>equalsIgnoreCase</span><span class=o>(</span><span class=s>&#34;ModelA&#34;</span><span class=o>)){</span>
+         <span class=k>return</span> <span class=k>new</span> <span class=n>ModelA</span><span class=o>();</span>
    
-      } else if(carModel.equalsIgnoreCase(&quot;ModelB&quot;)){
-         return new ModelB();
+      <span class=o>}</span> <span class=k>else</span> <span class=k>if</span><span class=o>(</span><span class=n>carModel</span><span class=o>.</span><span class=na>equalsIgnoreCase</span><span class=o>(</span><span class=s>&#34;ModelB&#34;</span><span class=o>)){</span>
+         <span class=k>return</span> <span class=k>new</span> <span class=n>ModelB</span><span class=o>();</span>
    
-      } else if(carModel.equalsIgnoreCase(&quot;ModelC&quot;)){
-         return new ModelC();
-      }
+      <span class=o>}</span> <span class=k>else</span> <span class=k>if</span><span class=o>(</span><span class=n>carModel</span><span class=o>.</span><span class=na>equalsIgnoreCase</span><span class=o>(</span><span class=s>&#34;ModelC&#34;</span><span class=o>)){</span>
+         <span class=k>return</span> <span class=k>new</span> <span class=n>ModelC</span><span class=o>();</span>
+      <span class=o>}</span>
   
-      return null;
-   }
-}
-</code></pre><h3 id=step-4>Step 4</h3>
+      <span class=k>return</span> <span class=kc>null</span><span class=o>;</span>
+   <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><h3 id=step-4>Step 4</h3>
 <p>Use the Factory to get the objects of the concrete class by passing information such as type.</p>
 <p><em>FactoryPatternDemo.java</em></p>
-<pre tabindex=0><code>public class FactoryPatternDemo {
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>class</span> <span class=nc>FactoryPatternDemo</span> <span class=o>{</span>
 
-   public static void main(String[] args) {
-      CarFactory carFactory = new CarFactory();
+   <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+      <span class=n>CarFactory</span> <span class=n>carFactory</span> <span class=o>=</span> <span class=k>new</span> <span class=n>CarFactory</span><span class=o>();</span>
 
-      //get an object of ModelA and call its drive method.
-      Car modelA = carFactory.getCarModel(&quot;ModelA&quot;);
+      <span class=c1>//get an object of ModelA and call its drive method.
+</span><span class=c1></span>      <span class=n>Car</span> <span class=n>modelA</span> <span class=o>=</span> <span class=n>carFactory</span><span class=o>.</span><span class=na>getCarModel</span><span class=o>(</span><span class=s>&#34;ModelA&#34;</span><span class=o>);</span>
 
-      //call drive method of ModelA
-      modelA.drive();
+      <span class=c1>//call drive method of ModelA
+</span><span class=c1></span>      <span class=n>modelA</span><span class=o>.</span><span class=na>drive</span><span class=o>();</span>
 
-      //get an object of ModelB and call its drive method.
-      Car modelB = carFactory.getCarModel(&quot;ModelB&quot;);
+      <span class=c1>//get an object of ModelB and call its drive method.
+</span><span class=c1></span>      <span class=n>Car</span> <span class=n>modelB</span> <span class=o>=</span> <span class=n>carFactory</span><span class=o>.</span><span class=na>getCarModel</span><span class=o>(</span><span class=s>&#34;ModelB&#34;</span><span class=o>);</span>
 
-      //call drive method of ModelB
-      modelB.drive();
+      <span class=c1>//call drive method of ModelB
+</span><span class=c1></span>      <span class=n>modelB</span><span class=o>.</span><span class=na>drive</span><span class=o>();</span>
 
-      //get an object of ModelC and call its drive method.
-      Car modelC = carFactory.getCarModel(&quot;ModelC&quot;);
+      <span class=c1>//get an object of ModelC and call its drive method.
+</span><span class=c1></span>      <span class=n>Car</span> <span class=n>modelC</span> <span class=o>=</span> <span class=n>carFactory</span><span class=o>.</span><span class=na>getCarModel</span><span class=o>(</span><span class=s>&#34;ModelC&#34;</span><span class=o>);</span>
 
-      //call drive method of ModelC
-      modelC.drive();
-   }
-}
-</code></pre><h3 id=step-5>Step 5</h3>
+      <span class=c1>//call drive method of ModelC
+</span><span class=c1></span>      <span class=n>modelC</span><span class=o>.</span><span class=na>drive</span><span class=o>();</span>
+   <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><h3 id=step-5>Step 5</h3>
 <p>Verify the output.</p>
 <pre tabindex=0><code>Inside ModelA::drive() method.
 Inside ModelB::drive() method.
