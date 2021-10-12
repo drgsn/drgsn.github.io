@@ -72,9 +72,9 @@ Github
 <figcaption>2560px-Logo_of_Hugo_the_static_website_generator.svg.png</figcaption>
 </figure></p>
 <p>According to their <a class=link href=https://gohugo.io/about/what-is-hugo/ target=_blank rel=noopener>site</a> Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.</p>
-<p>Put it in layman terms <a class=link href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> is a tool that generates a full static HTML website based on raw data and a set of templates. Essentially, Hugo automates the task of coding individual HTML pages and gets those pages ready to serve to users ahead of time. The nice thing about Hugo is that even though is written in go, you don&rsquo;t need to have go installed on your machine.</p>
+<p>Put it in layman terms <a class=link href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> is a tool that generates a full static HTML website based on raw data and a set of templates. Essentially, Hugo automates the task of coding individual HTML pages and gets those pages ready to serve to users ahead of time. The nice thing about Hugo is that even though is written in Go, you don&rsquo;t need to have go installed on your machine.</p>
 <p>The raw data is the content you write in <a class=link href=https://www.markdownguide.org/ target=_blank rel=noopener>Markdown</a>, a format that widely used in lots of editors.</p>
-<p>The template is the theme that you chose for your site.</p>
+<p>The template is the theme that you choose for your site.</p>
 <p>My process for writing a blog post is:</p>
 <ul>
 <li>write a post using <a class=link href=https://code.visualstudio.com/ target=_blank rel=noopener>VSCode</a>. I have install the <a class=link href="https://marketplace.visualstudio.com/items?itemName=zaaack.markdown-editor" target=_blank rel=noopener>Markdown Editor</a> to make it easier to arrange the post and preview it, but lately I started using it less and less.
@@ -102,7 +102,7 @@ Github
 choco install hugo-extended -confirm
 </code></pre></div><h3 id=method-2---manual-installation>Method 2 - Manual Installation</h3>
 <p>The Hugo GitHub repository contains pre-built versions of the Hugo command-line tool for various operating systems, which can be found on <a class=link href=https://github.com/gohugoio/hugo/releases target=_blank rel=noopener>the Releases page</a>.</p>
-<p>For more instruction on installing these releases, refer to <a class=link href=https://gohugo.io/getting-started/installing/ target=_blank rel=noopener>Hugo&rsquo;s install guide.</a></p>
+<p>For more instructions on installing these releases, refer to <a class=link href=https://gohugo.io/getting-started/installing/ target=_blank rel=noopener>Hugo&rsquo;s install guide.</a></p>
 <h3 id=linux>Linux</h3>
 <p>Based on your operating system you can use one of the following commands:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># Debian / Ubuntu</span>
@@ -117,7 +117,7 @@ sudo dnf install hugo
 <h2 id=create-a-hugo-site>Create a Hugo site</h2>
 <blockquote>
 <p>If you don&rsquo;t have any knowledge of git, before you continue take a look at the <a class=link href=https://guides.github.com/introduction/git-handbook/ target=_blank rel=noopener>Git Handbook</a> and the <a class=link href=https://guides.github.com/ target=_blank rel=noopener>GitHub Guides Page</a>
-If you want to have an in depth knowledge of Git read the <a class=link href=https://git-scm.com/book/en/v2 target=_blank rel=noopener>Git Book</a></p>
+If you want to have an in-depth knowledge of Git read the <a class=link href=https://git-scm.com/book/en/v2 target=_blank rel=noopener>Git Book</a></p>
 </blockquote>
 <p>Now that you have Hugo install is time to create your own site and run it locally:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># create site</span>
@@ -130,7 +130,7 @@ hugo new site myblog-name
 <span class=c1># the -D option will include content marked as draft. More info at https://gohugo.io/commands/hugo_server/</span>
 hugo server -D
 
-</code></pre></div><p>Now that the site is created, comes the hardest part. Picking up a <a class=link href=https://themes.gohugo.io/ target=_blank rel=noopener>theme</a>. This is the steps were I&rsquo;ve spend the most time on and probably the part of my blog where I tinker the most until now. At the time of the writting I&rsquo;m using <a class=link href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener>Hugo Theme Stack.</a> My recommendation is that if you are using Git to manage your Hugo site, add the themes as a submodule.</p>
+</code></pre></div><p>Now that the site is created, comes the hardest part. Picking up a <a class=link href=https://themes.gohugo.io/ target=_blank rel=noopener>theme</a>. This is the steps were I&rsquo;ve spend the most time on and probably the part of my blog where I tinker the most until now. At the time of the writing I&rsquo;m using <a class=link href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener>Hugo Theme Stack.</a> My recommendation is that if you are using Git to manage your Hugo site, add the themes as a submodule.</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># git submodule add repo-url</span>
 git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
 
@@ -259,7 +259,7 @@ git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-them
 <h3 id=creating-a-new-post>Creating a new post</h3>
 <p>Create a new post to give your Hugo site some initial content. Run the hugo new command in your terminal to generate a new post:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>  hugo new posts/hello-world.md
-</code></pre></div><p>Inside of hello-world.md, add some initial content. Remove the draft line in your post&rsquo;s frontmatter when you are happy with it and want your post to be published. Any posts with draft: true set will be skipped by Hugo&rsquo;s build process. If you test locally remember the <code>-D</code> option so that you draft is build.</p>
+</code></pre></div><p>Inside of hello-world.md, add some initial content. Remove the draft line in your post&rsquo;s frontmatter when you are happy with it and want your post to be published. Any posts with draft: true set will be skipped by Hugo&rsquo;s build process. If you test locally remember the <code>-D</code> option so that your draft is built.</p>
 <h2 id=deploy-to-github-pages>Deploy to GitHub Pages</h2>
 <p>We will commit our posts to a private repository and we will publish them using GitHub Actions.</p>
 <p>The first thing that we need to do is to create 2 GitHub repositories (one public one and one private one) by visiting <a class=link href=https://repo.new/ target=_blank rel=noopener>repo.new</a>.</p>
@@ -271,9 +271,9 @@ git add .
 git remote add origin replace_with_url_of_private_repo
 git commit -m “first commit”
 git push origin master
-</code></pre></div><p>After successfully committed, visit your private repository, you should see everything that was in your site folder. If everything looks as expected, it time to set up GitHub Actions to publish you site to the public repository.</p>
+</code></pre></div><p>After successfully committed, visit your private repository, you should see everything that was in your site folder. If everything looks as expected, it is time to set up GitHub Actions to publish your site to the public repository.</p>
 <h3 id=setup-github-actions-to-publish-changes>Setup GitHub Actions to publish changes</h3>
-<p>Once we have the repositories ready, it&rsquo;s time to setup the GitHub Actions.
+<p>Once we have the repositories ready, it&rsquo;s time to set up the GitHub Actions.
 This can easily be done by adding a <code>deploy.yaml</code> in <code>your_site/.github/workflows</code>
 <figure class=gallery-image style=flex-grow:164;flex-basis:395px>
 <a href=/p/how-to-host-your-site-on-github-for-free/github-actions.png data-size=1516x921>
@@ -329,15 +329,15 @@ touch deploy.yaml
 git commit -m <span class=s2>&#34;added github action&#34;</span>
 git push
 </code></pre></div><p>After the action finishes running, you should see your site in your public repo. If you visit <code>&lt;USERNAME>.github.io/&lt;public_repo_name></code> then your site should load.</p>
-<h2 id=use-custom-domain>Use custom domain</h2>
-<p>We are getting close, but lets take it a step further and have a custom domain, and not a github.io one. In order to achive this we have only a couple of steps left to do.</p>
+<h2 id=use-a-custom-domain>Use a custom domain</h2>
+<p>We are getting close, but let&rsquo;s take it a step further and have a custom domain, and not a github.io one. To achieve this, we have only a couple of steps left to do.</p>
 <ol>
 <li>
 <p>Make sure that you have a domain name
-You can buy a domain from <a class=link href=https://namecheap.com target=_blank rel=noopener>namecheap</a> or <a class=link href=https://www.godaddy.com target=_blank rel=noopener>godaddy</a> or any other provider. Usually the prices are similar or the same between them, but you might find some providers that offer a domain for free for a limited period of time.</p>
+You can buy a domain from <a class=link href=https://namecheap.com target=_blank rel=noopener>namecheap</a> or <a class=link href=https://www.godaddy.com target=_blank rel=noopener>godaddy</a> or any other provider. Usually, the prices are similar or the same between them, but you might find some providers that offer a domain for free for a limited period of time.</p>
 </li>
 <li>
-<p>Configure you domain to point to GitHub. In order to do this you need to add the following addresses as a records in your dns configuration.</p>
+<p>Configure your domain to point to GitHub. In order to do this, you need to add the following addresses as records in your DNS configuration.</p>
 <pre tabindex=0><code>185.199.108.153
 185.199.109.153
 185.199.110.153
@@ -350,7 +350,7 @@ You can buy a domain from <a class=link href=https://namecheap.com target=_blank
 </a>
 </figure></p>
 <ol start=3>
-<li>Add a <code>CNAME</code> file inside your site the <code>static</code> folder. This will ensure that everytime you publish your changes, the CNAME will be published too.
+<li>Add a <code>CNAME</code> file inside your site to the <code>static</code> folder. This will ensure that every time you publish your changes, the CNAME will be published too.
 <figure class=gallery-image style=flex-grow:318;flex-basis:763px>
 <a href=/p/how-to-host-your-site-on-github-for-free/drgos-cname.png data-size=1445x454>
 <img src=/p/how-to-host-your-site-on-github-for-free/drgos-cname.png width=1445 height=454 srcset="/p/how-to-host-your-site-on-github-for-free/drgos-cname_hu864b7a7be61b78e154646c8588d5f0c9_44889_480x0_resize_box_3.png 480w, /p/how-to-host-your-site-on-github-for-free/drgos-cname_hu864b7a7be61b78e154646c8588d5f0c9_44889_1024x0_resize_box_3.png 1024w" loading=lazy alt="cname file">
@@ -365,8 +365,8 @@ You can buy a domain from <a class=link href=https://namecheap.com target=_blank
 <figcaption>settings page</figcaption>
 </figure></li>
 </ol>
-<p>And you should be done. Now you have your static site deployed on github that gets updated everytime you do a push on your private repo.</p>
-<p>If you ran into any problems, don&rsquo;t esitate to comment and I will try to help out 😉.</p>
+<p>And you should be done. Now you have your static site deployed on GitHub that gets updated every time you do a push on your private repo.</p>
+<p>If you run into any problems, don&rsquo;t hesitate to comment and I will try to help out 😉.</p>
 <blockquote>
 <p>Credits:</p>
 <ul>
@@ -469,7 +469,7 @@ Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=
 <li><a href=#setup-github-actions-to-publish-changes>Setup GitHub Actions to publish changes</a></li>
 </ol>
 </li>
-<li><a href=#use-custom-domain>Use custom domain</a></li>
+<li><a href=#use-a-custom-domain>Use a custom domain</a></li>
 </ol>
 </nav>
 </div>
