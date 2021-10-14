@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DrGos</title><link>https://drgos.com/</link><description>Recent content on DrGos</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 12 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://drgos.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Factory Pattern</title><link>https://drgos.com/p/factory-pattern/</link><pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate><guid>https://drgos.com/p/factory-pattern/</guid><description>&lt;img src="https://images.unsplash.com/photo-1567789884554-0b844b597180?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Featured image of post Factory Pattern" />&lt;p>Factory pattern or Factory Method Pattern is one of the most basic and most used design patterns in OOP languages. This is a creational type pattern and this pattern provides one of the best ways to create different objects without exposing the creation logic and exposing it using a common interface.&lt;/p>
 &lt;p>To make it easier to understand, think of a car factory. The car factory produces multiple car types, but you don&amp;rsquo;t know exactly how the cars are produced, how much of the underlying technology and components they share, but you don&amp;rsquo;t care about that.&lt;/p>
 &lt;p>When you chose a car, you make the choice based on what it offers you, not on what it shares with other cars, that&amp;rsquo;s the problem that the manufacturer needs to figure out. You are interested just in getting the select model you choose from the factory.&lt;/p>
+&lt;p>In other words it provides an interface for creating families of related or dependent objects without specifying their concrete classes.&lt;/p>
 &lt;h2 id="implementation">Implementation&lt;/h2>
 &lt;p>Keeping the previous analogy in mind, let&amp;rsquo;s look at a diagram of how we would use the factory pattern.&lt;/p>
 &lt;p>&lt;figure
+class="gallery-image"
+style="
+flex-grow: 178;
+flex-basis: 427px"
 >
-&lt;a href="https://drgos.com/assets/20211013_020335_factory-pattern.svg" >
-&lt;img src="https://drgos.com/assets/20211013_020335_factory-pattern.svg"
+&lt;a href="https://drgos.com/p/factory-pattern/factory-pattern.png" data-size="1660x931">
+&lt;img src="https://drgos.com/p/factory-pattern/factory-pattern.png"
+width="1660"
+height="931"
+srcset="https://drgos.com/p/factory-pattern/factory-pattern_hu30cf8d50bfb11bad695b4c2ad5787fcc_32288_480x0_resize_box_3.png 480w, https://drgos.com/p/factory-pattern/factory-pattern_hu30cf8d50bfb11bad695b4c2ad5787fcc_32288_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 >
 &lt;/a>
@@ -89,55 +97,31 @@ Inside ModelC::drive() method.
 &lt;/code>&lt;/pre>&lt;h2 id="use-cases">Use cases&lt;/h2>
 &lt;ul>
 &lt;li>
-&lt;p>Use the Factory Method when you don’t know beforehand the exact types and dependencies of the objects your code should work with.&lt;/p>
+&lt;p>A class cannot anticipate the type of objects it needs to create beforehand.&lt;/p>
 &lt;ul>
-&lt;li>The Factory Method separates product construction code from the code that uses the product. Therefore it’s easier to extend the product construction code independently from the rest of the code.
-For example, to add a new product type to the app, you’ll only need to create a new creator subclass and override the factory method in it.&lt;/li>
+&lt;li>The Factory Pattern separates the object construction code from the code that uses the object. Therefore it’s easier to extend the object construction code independently from the rest of the code.
+For example, to add a new object type to the app, you’ll only need to create a new creator subclass and override the factory method in it.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>Use the Factory Method when you want to provide users of your library or framework with a way to extend its internal components.&lt;/p>
-&lt;ul>
-&lt;li>Inheritance is probably the easiest way to extend the default behavior of a library or framework. But how would the framework recognize that your subclass should be used instead of a standard component?&lt;/li>
-&lt;/ul>
-&lt;p>The solution is to reduce the code that constructs components across the framework into a single factory method and let anyone override this method in addition to extending the component itself.&lt;/p>
+&lt;p>A class requires its subclasses to specify the objects it creates.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Use the Factory Method when you want to save system resources by reusing existing objects instead of rebuilding them each time.&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>You often experience this need when dealing with large, resource-intensive objects such as database connections, file systems, and network resources.&lt;/p>
-&lt;p>Let’s think about what has to be done to reuse an existing object:&lt;/p>
-&lt;p>First, you need to create some storage to keep track of all of the created objects.&lt;/p>
-&lt;p>When someone requests an object, the program should look for a free object inside that pool. … and then return it to the client code.&lt;/p>
-&lt;p>If there are no free objects, the program should create a new one (and add it to the pool).
+&lt;p>You want to localize the logic to instantiate a complex object. For example the connection to a database.
+Let’s think about what has to be done to reuse an existing connection to the database:&lt;/p>
+&lt;p>First, you need to create some storage to keep track of all of the opened connections.&lt;/p>
+&lt;p>When someone wants to interact with the database, the program should look for a free connection inside that pool, and then return it to the client code.&lt;/p>
+&lt;p>If there are no free connection, the program should create a new one and add it to the pool.
 That’s a lot of code! And it must all be put into a single place so that you don’t pollute the program with duplicate code.&lt;/p>
-&lt;p>Probably the most obvious and convenient place where this code could be placed is the constructor of the class whose objects we’re trying to reuse. However, a constructor must always return new objects by definition. It can’t return existing instances.&lt;/p>
+&lt;p>Probably the most obvious and convenient place where this code could be placed is in the constructor of the class whose objects we’re trying to reuse. However, a constructor must always return new objects by definition. It can’t return existing instances.&lt;/p>
 &lt;p>Therefore, you need to have a regular method capable of creating new objects as well as reusing existing ones. That sounds very much like a factory method.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="how-to-implement">How to Implement&lt;/h2>
-&lt;ol>
-&lt;li>Make all products follow the same interface. This interface should declare methods that make sense in every product.&lt;/li>
-&lt;li>Add an empty factory method inside the creator class. The return type of the method should match the common product interface.&lt;/li>
-&lt;li>In the creator’s code find all references to product constructors. One by one, replace them with calls to the factory method while extracting the product creation code into the factory method.&lt;/li>
-&lt;/ol>
-&lt;p>You might need to add a temporary parameter to the factory method to control the type of returned product.&lt;/p>
-&lt;p>At this point, the code of the factory method may look pretty ugly. It may have a large switch operator that picks which product class to instantiate. But don’t worry, we’ll fix it soon enough.&lt;/p>
-&lt;ol start="4">
-&lt;li>Now, create a set of creator subclasses for each type of product listed in the factory method. Override the factory method in the subclasses and extract the appropriate bits of construction code from the base method.&lt;/li>
-&lt;li>If there are too many product types and it doesn’t make sense to create subclasses for all of them, you can reuse the control parameter from the base class in subclasses.&lt;/li>
-&lt;/ol>
-&lt;p>For instance, imagine that you have the following hierarchy of classes: the base Mail class with a couple of subclasses: AirMail and GroundMail; the Transport classes are Plane, Truck and Train. While the AirMail class only uses Plane objects, GroundMail may work with both Truck and Train objects. You can create a new subclass (say TrainMail) to handle both cases, but there’s another option. The client code can pass an argument to the factory method of the GroundMail class to control which product it wants to receive.&lt;/p>
-&lt;ol start="6">
-&lt;li>If, after all of the extractions, the base factory method has become empty, you can make it abstract. If there’s something left, you can make it a default behavior of the method.&lt;/li>
-&lt;/ol>
+&lt;p>The Factory Method Pattern is useful when you need to abstract the creation of an object away from its actual implementation. Let’s say the factory will be building a “Car” product type. A car could be made up of any number of components, some of which can and will change later, depending on advances in technology.&lt;/p>
 &lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
 &lt;p>&lt;strong>Pros:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>You avoid tight coupling between the creator and the concrete products.&lt;/li>
+&lt;li>You avoid tight coupling between the creator and the created objects.&lt;/li>
 &lt;li>Single Responsibility Principle. You can move the product creation code into one place in the program, making the code easier to support.&lt;/li>
 &lt;li>Open/Closed Principle. You can introduce new types of products into the program without breaking the existing client code.&lt;/li>
 &lt;/ul>
@@ -153,6 +137,8 @@ That’s a lot of code! And it must all be put into a single place so that you d
 >Wikipedia - Factory method pattern&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="https://refactoring.guru/design-patterns/factory-method" target="_blank" rel="noopener"
 >Refactoring Guru - Factory Method&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://www.sitepoint.com/understanding-the-factory-method-design-pattern/" target="_blank" rel="noopener"
+>Sitepoint - Understanding the Factory Method Design Pattern&lt;/a>&lt;/p>
 &lt;/blockquote></description></item><item><title>Design Patterns Intro</title><link>https://drgos.com/p/design-patterns-intro/</link><pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate><guid>https://drgos.com/p/design-patterns-intro/</guid><description>&lt;img src="https://images.unsplash.com/photo-1566937169390-7be4c63b8a0e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=738&q=80" alt="Featured image of post Design Patterns Intro" />&lt;blockquote>
 &lt;p>There is an old saying, &amp;ldquo;If the only tool you have is a hammer, you will start treating all your problems like a nail.”&lt;/p>
 &lt;p>This quote dates back to 1964 and Abraham Kaplan, whose first wording was actually:&lt;/p>
@@ -227,7 +213,7 @@ Design patterns are template solutions to general problems that software develop
 &lt;li>&lt;a class="link" href="https://www.tutorialspoint.com/design_pattern/design_pattern_overview.htm" target="_blank" rel="noopener"
 >TutorialsPoint - Design Patterns&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;/blockquote></description></item><item><title>How to host your site on Github for free!</title><link>https://drgos.com/p/how-to-host-your-site-on-github-for-free/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://drgos.com/p/how-to-host-your-site-on-github-for-free/</guid><description>&lt;img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80" alt="Featured image of post How to host your site on Github for free!" />&lt;p>I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.&lt;/p>
+&lt;/blockquote></description></item><item><title>How to host your site on Github for free!</title><link>https://drgos.com/p/how-to-host-your-site-on-github-for-free/</link><pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate><guid>https://drgos.com/p/how-to-host-your-site-on-github-for-free/</guid><description>&lt;img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80" alt="Featured image of post How to host your site on Github for free!" />&lt;p>I&amp;rsquo;ve decided to start a blog and what better hello world post than how I&amp;rsquo;ve set it up. But first lets talk about what is Hugo.&lt;/p>
 &lt;h2 id="what-is-hugo">What is Hugo?&lt;/h2>
 &lt;p>&lt;figure
 >
